@@ -28,15 +28,21 @@ const Schema = mongoose.Schema
 
 // This is the beginning of a model for the Product object.   // Add more attributes to your product here.
 const Question = mongoose.model("Question", {
-  name: String,
+  surname: String,
+  lastname: String,
   email: String,
   title: String,
   question: String,
   category: String,
+  answered: Boolean,
+  date: { type: Date, default: Date.now }
 })
 
 const Answer = mongoose.model("Answer", {
+  surname: String,
+  lastname: String,
   answer: String,
+  date: { type: Date, default: Date.now },
   question: {type: Schema.Types.ObjectId, ref: "Question"}
 })
 
@@ -56,10 +62,24 @@ app.post("/questions", (req, res) => {
 
 // Add more endpoints here!
 
-// app.get("/products", (req, res) => {
-//   Product.find().then((allProducts) => {
-//     res.json(allProducts)
-//   })
-// })
+app.get("/questions", (req, res) => {
+  Question.find().then((allQuestions) => {
+    res.json(allQuestions)
+  })
+})
 
-app.listen(8080, () => console.log("Products API listening on port 8080!"))
+app.post("/answers", (req, res) => {
+  const answer = new Answer(req.body)
+
+  answer.save()
+    .then(() => { res.status(201).send("Answer created") })
+    .catch(err => { res.status(400).send(err) })
+})
+
+app.get("/answers", (req, res) => {
+  Answer.find().then((allAnswers) => {
+    res.json(allAnswers)
+  })
+})
+
+app.listen(8080, () => console.log("FAQ API listening on port 8080!"))
