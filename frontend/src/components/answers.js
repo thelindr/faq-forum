@@ -19,7 +19,7 @@ class Answers extends React.Component {
   render() {
     return (
       <div>
-        Find me in src/app.js!
+        Answers
       </div>
     )
   }

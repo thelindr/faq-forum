@@ -1,4 +1,5 @@
 import React from "react"
+import Formuser from "./formuser"
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        Find me in src/app.js!
+        <Formuser />
       </div>
     )
   }
