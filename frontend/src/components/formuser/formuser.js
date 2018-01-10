@@ -1,4 +1,5 @@
 import React from "react"
+import "./style.css"
 
 class Formuser extends React.Component {
   constructor(props) {
@@ -71,7 +72,7 @@ class Formuser extends React.Component {
             <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="lastname" />
             <input type="text" value={this.state.email} onChange={this.handleEmail} placeholder="email" />
             <input type="text" value={this.state.title} onChange={this.handleTitle} placeholder="title" />
-            <input type="text" value={this.state.question} onChange={this.handleQuestion} placeholder="question" />
+            <input className="question" type="text" value={this.state.question} onChange={this.handleQuestion} placeholder="question" />
             <select type="text" value={this.state.category} onChange={this.handleCategory} placeholder="category">
               <option value="value1">OP-1</option>
               <option value="value2">PocketOperator</option>

@@ -1,5 +1,5 @@
 import React from "react"
-import Formuser from "./formuser"
+import Formuser from "../components/formuser/formuser"
 
 class App extends React.Component {
   constructor(props) {
