@@ -28,7 +28,7 @@ const Schema = mongoose.Schema
 
 // This is the beginning of a model for the Product object.   // Add more attributes to your product here.
 const Question = mongoose.model("Question", {
-  surname: String,
+  firstname: String,
   lastname: String,
   email: String,
   title: String,
@@ -39,7 +39,7 @@ const Question = mongoose.model("Question", {
 })
 
 const Answer = mongoose.model("Answer", {
-  surname: String,
+  firstname: String,
   lastname: String,
   answer: String,
   date: { type: Date, default: Date.now },
