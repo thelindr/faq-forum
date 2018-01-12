@@ -52,8 +52,14 @@ const Question = mongoose.model("Question", {
     type: String,
     required: true
   },
-  answered: Boolean,
-  date: { type: Date, default: Date.now }
+  answered: {
+    type: Boolean,
+    default: false
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 })
 
 const Answer = mongoose.model("Answer", {

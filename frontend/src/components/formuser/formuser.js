@@ -120,6 +120,9 @@ class Formuser extends React.Component {
             <option
               value="OD-11">OD-11
             </option>
+            <option
+              value="other">Other
+            </option>
           </select>
           <button type="submit">ask</button>
         </form>

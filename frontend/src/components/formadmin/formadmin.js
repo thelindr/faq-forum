@@ -1,4 +1,5 @@
 import React from "react"
+import "./style.css"
 
 class Formadmin extends React.Component {
   constructor(props) {
@@ -52,13 +53,18 @@ class Formadmin extends React.Component {
 
   render() {
     return (
-      <div className="form-container">
+      <div className="answer">
+
+        <form className="form-admin-question">
+          <input type="text" value={this.props.title} onChange={this.handleQuestion} />
+          <input type="text" value={this.props.question} onChange={this.handleQuestion} />
+        </form>
+
         <h1>Add your answer</h1>
-        <form className="form" onSubmit={this.handleSubmit}>
+        <form className="form-admin-answer" onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="First name" />
           <input type="text" value={this.state.lastname} onChange={this.handleLastame} placeholder="Last name" />
           <input type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="Enter you answer" />
-          <input type="hidden" value={this.props.question} onChange={this.handleQuestion} placeholder="Antal" />
           <button>Add</button>
         </form>
       </div>
