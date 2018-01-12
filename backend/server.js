@@ -50,6 +50,7 @@ const Question = mongoose.model("Question", {
   },
   category: {
     type: String,
+    required: true
   },
   answered: Boolean,
   date: { type: Date, default: Date.now }
