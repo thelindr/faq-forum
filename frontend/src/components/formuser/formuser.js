@@ -67,10 +67,9 @@ class Formuser extends React.Component {
         title: "",
         question: "",
         category: ""
-    }, () => { console.log("State has been reset", response, response.status) })
-  ))
-}
-
+      }, () => { console.log("State has been reset", response, response.status) })
+    ))
+  }
 
   render() {
     return (
