@@ -104,7 +104,7 @@ class Formuser extends React.Component {
             value={this.state.question}
             onChange={this.handleQuestion}
             placeholder="question"
-            spellcheck="false" />
+            spellCheck="false" />
           <select
             type="text"
             value={this.state.category}
