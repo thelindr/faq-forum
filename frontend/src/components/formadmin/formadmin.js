@@ -52,12 +52,14 @@ class Formadmin extends React.Component {
   }
 
   render() {
+    const X = this.props.questionAPI
     return (
       <div className="answer">
-
         <form className="form-admin-question">
+          <h1>{this.props.questionAPI.length}</h1>
+          <h1>{X.length}</h1>
           <input type="text" value={this.props.title} onChange={this.handleQuestion} />
-          <input type="text" value={this.props.question} onChange={this.handleQuestion} />
+          <input type="text" value={this.props.firstname} onChange={this.handleQuestion} />
         </form>
 
         <h1>Add your answer</h1>
