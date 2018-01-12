@@ -23,7 +23,10 @@ button {
   padding: 20px;
 }
 
-.question {
-  height: 50px;
-  padding-top: 0;
+textarea {
+  padding: 20px;
+  margin: 10px;
+  resize: none;
+  width: 95%;
+  height: 100px;
 }
