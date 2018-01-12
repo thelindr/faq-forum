@@ -28,14 +28,38 @@ const Schema = mongoose.Schema
 
 // This is the beginning of a model for the Product object.   // Add more attributes to your product here.
 const Question = mongoose.model("Question", {
-  firstname: String,
-  lastname: String,
-  email: String,
-  title: String,
-  question: String,
-  category: String,
-  answered: { type: Boolean, default: false },
-  date: { type: Date, default: Date.now }
+  firstname: {
+    type: String,
+    required: true
+  },
+  lastname: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  title: {
+    type: String,
+    required: true
+  },
+  question: {
+    type: String,
+    required: true
+  },
+  category: {
+    type: String,
+    required: true
+  },
+  answered: {
+    type: Boolean,
+    default: false
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 })
 
 const Answer = mongoose.model("Answer", {
