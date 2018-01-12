@@ -10,15 +10,15 @@ class Formuser extends React.Component {
       email: "",
       title: "",
       question: "",
-      category: "",
+      category: ""
     }
   }
 
   handleFirstname = event => {
-      this.setState({
-        firstname: event.target.value
-      })
-    }
+    this.setState({
+      firstname: event.target.value
+    })
+  }
 
     handleLastname= event => {
       this.setState({
@@ -50,42 +50,85 @@ class Formuser extends React.Component {
       })
     }
 
-    handleSubmit = event => {
-      event.preventDefault()
-      fetch("http://localhost:8080/questions", {
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(this.state)
-      }).then((response) => {
-        return response.json()
-      })
-    }
+  handleSubmit = event => {
+    event.preventDefault()
+    fetch("http://localhost:8080/questions", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.state)
+    }).then(response => {
+      if (response.ok) {
+        this.setState({
+          firstname: "",
+          lastname: "",
+          email: "",
+          title: "",
+          question: "",
+          category: ""
+        }, () => { console.log("State has been reset", response, response.status) })
+      } else {
+        // errors...
+      }
+    })
+  }
 
-    render() {
-      return (
-        <div>
-
-          <form className="ask" onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="firstname" />
-            <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="lastname" />
-            <input type="text" value={this.state.email} onChange={this.handleEmail} placeholder="email" />
-            <input type="text" value={this.state.title} onChange={this.handleTitle} placeholder="title" />
-            <input className="question" type="text" value={this.state.question} onChange={this.handleQuestion} placeholder="question" />
-            <select type="text" value={this.state.category} onChange={this.handleCategory} placeholder="category">
-              <option value="value1">OP-1</option>
-              <option value="value2">PocketOperator</option>
-              <option value="value3">OD-11</option>
-              <option value="value4">Other</option>
-            </select>
-            <button type="submit">ask</button>
-          </form>
-        </div>
-      )
-    }
-
+  render() {
+    return (
+      <div>
+        <form className="ask" onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            value={this.state.firstname}
+            onChange={this.handleFirstname}
+            placeholder="firstname" />
+          <input
+            type="text"
+            value={this.state.lastname}
+            onChange={this.handleLastname}
+            placeholder="lastname" />
+          <input
+            type="email"
+            value={this.state.email}
+            onChange={this.handleEmail}
+            placeholder="email" />
+          <input
+            type="text"
+            value={this.state.title}
+            onChange={this.handleTitle}
+            placeholder="title" />
+          <textarea
+            type="text"
+            value={this.state.question}
+            onChange={this.handleQuestion}
+            placeholder="question"
+            spellCheck="false" />
+          <select
+            type="text"
+            value={this.state.category}
+            onChange={this.handleCategory}
+            placeholder="category">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option
+              value="OP-1">OP-1
+            </option>
+            <option
+              value="PocketOperator">PocketOperator
+            </option>
+            <option
+              value="OD-11">OD-11
+            </option>
+            <option
+              value="other">Other
+            </option>
+          </select>
+          <button type="submit">ask</button>
+        </form>
+      </div>
+    )
+  }
 }
 
 export default Formuser
