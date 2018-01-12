@@ -1,5 +1,6 @@
 import React from "react"
 import Formuser from "../components/formuser/formuser"
+import QList from "../components/formadmin/qlist"
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class App extends React.Component {
     return (
       <div>
         <Formuser />
+        <QList />
       </div>
     )
   }

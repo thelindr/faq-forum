@@ -34,7 +34,7 @@ const Question = mongoose.model("Question", {
   title: String,
   question: String,
   category: String,
-  answered: Boolean,
+  answered: { type: Boolean, default: false },
   date: { type: Date, default: Date.now }
 })
 
