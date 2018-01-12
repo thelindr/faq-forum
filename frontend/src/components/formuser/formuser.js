@@ -59,18 +59,6 @@ class Formuser extends React.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(this.state)
-<<<<<<< HEAD
-    }).then(response => (
-      this.setState({
-        firstname: "",
-        lastname: "",
-        email: "",
-        title: "",
-        question: "",
-        category: ""
-      }, () => { console.log("State has been reset", response, response.status) })
-    ))
-=======
     }).then(response => {
       if (response.ok) {
         this.setState({
@@ -85,7 +73,6 @@ class Formuser extends React.Component {
         // errors...
       }
     })
->>>>>>> f55ee0d5eb7ac80da8f329af52ea952870efb788
   }
 
   render() {
@@ -125,13 +112,13 @@ class Formuser extends React.Component {
             placeholder="category">
             <option value="" selected disabled hidden>Choose here</option>
             <option
-              value="value1">OP-1
+              value="OP-1">OP-1
             </option>
             <option
-              value="value2">PocketOperator
+              value="PocketOperator">PocketOperator
             </option>
             <option
-              value="value3">OD-11
+              value="OD-11">OD-11
             </option>
           </select>
           <button type="submit">ask</button>
