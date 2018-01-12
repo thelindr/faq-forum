@@ -10,15 +10,15 @@ class Formuser extends React.Component {
       email: "",
       title: "",
       question: "",
-      category: "",
+      category: ""
     }
   }
 
   handleFirstname = event => {
-      this.setState({
-        firstname: event.target.value
-      })
-    }
+    this.setState({
+      firstname: event.target.value
+    })
+  }
 
     handleLastname= event => {
       this.setState({
@@ -67,10 +67,9 @@ class Formuser extends React.Component {
         title: "",
         question: "",
         category: ""
-    }, () => { console.log("State has been reset", response, response.status) })
-  ))
-}
-
+      }, () => { console.log("State has been reset", response, response.status) })
+    ))
+  }
 
   render() {
     return (
