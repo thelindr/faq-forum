@@ -67,6 +67,7 @@ class Formuser extends React.Component {
     render() {
       return (
         <div>
+
           <form className="ask" onSubmit={this.handleSubmit}>
             <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="firstname" />
             <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="lastname" />
@@ -77,6 +78,7 @@ class Formuser extends React.Component {
               <option value="value1">OP-1</option>
               <option value="value2">PocketOperator</option>
               <option value="value3">OD-11</option>
+              <option value="value4">Other</option>
             </select>
             <button type="submit">ask</button>
           </form>
