@@ -60,9 +60,17 @@ class Formuser extends React.Component {
       },
       body: JSON.stringify(this.state)
     }).then(response => (
-      response.json()
-    ))
-  }
+      this.setState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        title: "",
+        question: "",
+        category: ""
+    }, () => { console.log("State has been reset", response, response.status) })
+  ))
+}
+
 
   render() {
     return (
