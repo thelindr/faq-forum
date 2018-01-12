@@ -2,7 +2,7 @@ import React from "react"
 // import { BrowserRouter } from "react-router-dom"
 import Formuser from "../components/formuser/formuser"
 import Formadmin from "../components/formadmin/formadmin"
-import QList from "../components/formadmin/qlist"
+// import QList from "../components/formadmin/qlist"
 
 class App extends React.Component {
   constructor(props) {
@@ -24,12 +24,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <QList
-          notAnsweredQuestions={this.state.questionAPI.filter((item => item.answered === false))} />
+        {/* <QList
+          notAnsweredQuestions={this.state.questionAPI.filter((item => item.answered === false))} /> */}
         <Formuser />
         <Formadmin
-          questionAPI={this.state.questionAPI}
-          firstname={this.state.questionAPI.firstname} />
+          questions={this.state.questionAPI} />
       </div>
     )
   }

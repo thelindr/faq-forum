@@ -1,5 +1,6 @@
 import React from "react"
 import "./style.css"
+import QListItem from "./qlistitem"
 
 class Formadmin extends React.Component {
   constructor(props) {
@@ -52,14 +53,15 @@ class Formadmin extends React.Component {
   }
 
   render() {
-    const X = this.props.questionAPI
+    // shorthand version of const questions = this.props.questions
+    const { questions } = this.props
+    const notAnsweredQuestions = questions.filter((item => item.answered === false))
     return (
       <div className="answer">
         <form className="form-admin-question">
-          <h1>{this.props.questionAPI.length}</h1>
-          <h1>{X.length}</h1>
+          <p>{this.props.questions.length}</p>
           <input type="text" value={this.props.title} onChange={this.handleQuestion} />
-          <input type="text" value={this.props.firstname} onChange={this.handleQuestion} />
+          <input type="text" value={this.props.question} onChange={this.handleQuestion} />
         </form>
 
         <h1>Add your answer</h1>
@@ -69,6 +71,16 @@ class Formadmin extends React.Component {
           <input type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="Enter you answer" />
           <button>Add</button>
         </form>
+        <div>
+          {notAnsweredQuestions.map(item => (
+            <QListItem
+              question={item.question}
+              title={item.question}
+              category={item.category}
+              firstname={item.firstname}
+              email={item.email} />
+          ))}
+        </div>
       </div>
     )
   }
