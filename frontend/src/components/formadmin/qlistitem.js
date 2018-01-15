@@ -1,10 +1,12 @@
 import React from "react"
 
 export default class QListItem extends React.Component {
-
+  handleClick = () => {
+    this.props.handleChosen(this.props.id)
+  }
   render() {
     return (
-      <div className="q-item">
+      <div className="q-item" onClick={this.handleClick}>
         <p>Category: {this.props.category}</p>
         <p>Title: {this.props.title}</p>
         <p>Question: {this.props.question}</p>

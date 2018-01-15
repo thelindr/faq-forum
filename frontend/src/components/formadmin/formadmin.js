@@ -9,7 +9,7 @@ class Formadmin extends React.Component {
       firstname: "",
       lastname: "",
       answer: "",
-      question: props.question //någon props..
+      selectedId: ""
     }
   }
 
@@ -52,16 +52,26 @@ class Formadmin extends React.Component {
     ))
   }
 
+  handleChosen = id => {
+    console.log(id)
+    this.setState({
+      selectedId: id
+    })
+  }
+
   render() {
     // shorthand version of const questions = this.props.questions
     const { questions } = this.props
     const notAnsweredQuestions = questions.filter((item => item.answered === false))
+    const selectedQuestion = questions.find(question => (question._id === this.state.selectedId))
+    console.log("selected question", selectedQuestion)
     return (
       <div className="answer">
         <form className="form-admin-question">
           <p>{this.props.questions.length}</p>
-          <input type="text" value={this.props.title} onChange={this.handleQuestion} />
-          <input type="text" value={this.props.question} onChange={this.handleQuestion} />
+
+          <input type="text" value={selectedQuestion && selectedQuestion.title} />
+          <input type="text" value={selectedQuestion && selectedQuestion.question} />
         </form>
 
         <h1>Add your answer</h1>
@@ -74,8 +84,10 @@ class Formadmin extends React.Component {
         <div>
           {notAnsweredQuestions.map(item => (
             <QListItem
+              handleChosen={this.handleChosen}
+              id={item._id}
               question={item.question}
-              title={item.question}
+              title={item.title}
               category={item.category}
               firstname={item.firstname}
               email={item.email} />
