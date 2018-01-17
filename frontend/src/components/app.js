@@ -29,7 +29,15 @@ class App extends React.Component {
         <div>
           <Nav />
           <Faqlist />
-          <Route path="/formuser" component={Formuser} />
+          <Route exact path="/formuser" component={Formuser} />
+          <Route
+            exact
+            path="/formuser/:category"
+            render={routeProps =>
+              <Formuser
+                {...routeProps}
+                questions={this.state.questionAPI} />
+            } />
           <Route
             exact
             path="/formadmin"
