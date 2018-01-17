@@ -97,10 +97,14 @@ class Formadmin extends React.Component {
               <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="First name" />
               <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="Last name" />
               <textarea id="admintextarea" type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="Enter you answer" />
-              <button id="buttonmargin">reply</button>
+              <button id="buttonstyle">reply</button>
             </form>
 
           </div>
+        </div>
+
+        <div className="buttoncreatenew">
+          <Link to="/formadmin/createnewfaq"><button id="buttoncreatenew"> create a new FAQ </button></Link>
         </div>
       </div>
     )

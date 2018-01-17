@@ -1,7 +1,7 @@
 .adminpage {
   display: flex;
   flex-flow: wrap;
-  justify-content: flex-start;
+  justify-content: space-around;
   background: black;
   padding: 10px;
 }
@@ -29,7 +29,7 @@
   width: 100%;
   padding: 50px;
   padding-top: 30px;
-  margin-left: 250px;
+  /*margin-left: 250px;*/
   margin-bottom: 50px;
   display: flex;
   flex-flow: wrap;
@@ -60,6 +60,30 @@
   border-radius: 20px;
 }
 
-#buttonmargin {
+#buttoncreatenew {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+  background: black;
+  color: white;
+  border: 1px solid white;
+}
+
+#buttonstyle{
+  width: 20%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+  background: black;
+  color: white;
+  border: 1px solid white;
   margin-top: 20px;
+}
+
+.buttoncreatenew {
+  text-align: center;
+  margin-top: 100px;
 }

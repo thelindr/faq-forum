@@ -74,6 +74,15 @@ const Answer = mongoose.model("Answer", {
   question: {type: Schema.Types.ObjectId, ref: "Question"}
 })
 
+const Newfaq = mongoose.model("Newfaq", {
+  title: String,
+  question: String,
+  answer: String,
+  category: String,
+  date: { type: Date, default: Date.now }
+})
+
+
 app.get("/", (req, res) => {
   res.send("FAQ API")
 })
@@ -107,6 +116,20 @@ app.post("/answers", (req, res) => {
 app.get("/answers", (req, res) => {
   Answer.find().then((allAnswers) => {
     res.json(allAnswers)
+  })
+})
+
+app.post("/newfaq", (req, res) => {
+  const newfaq = new Newfaq(req.body)
+
+  newfaq.save()
+    .then(() => { res.status(201).send("Newfaq created") })
+    .catch(err => { res.status(400).send(err) })
+})
+
+app.get("/newfaq", (req, res) => {
+  Newfaq.find().then((allNewfaqs) => {
+    res.json(allNewfaqs)
   })
 })
 

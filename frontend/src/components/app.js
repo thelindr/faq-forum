@@ -5,6 +5,7 @@ import Formadmin from "../components/formadmin/formadmin"
 import Nav from "../components/nav"
 import Faqlist from "./formuser/faqlist"
 import Categories from "./formuser/categories/categories"
+import Createnewfaq from "../components/createnewfaq/createnewfaq"
 // import QList from "../components/formadmin/qlist"
 
 class App extends React.Component {
@@ -55,6 +56,10 @@ class App extends React.Component {
                 {...routeProps}
                 questions={this.state.questionAPI} />
             } />
+          <Route
+            exact
+            path="/formadmin/createnewfaq"
+            component={Createnewfaq} />
         </div>
       </BrowserRouter>
     )

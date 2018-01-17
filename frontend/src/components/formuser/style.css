@@ -22,13 +22,13 @@ select {
   width: 110%;
   height: 30px;
   margin: 10px;
-  margin-bottom: 40px;
+  /*margin-bottom: 40px;*/
   border-radius: 20px;
   background: black;
   color: white;
 }
 
-button {
+#buttonuser {
   width: 20%;
   text-align: center;
   padding: 20px;
@@ -50,4 +50,14 @@ button {
 
 #colorwhite {
   color: white;
+}
+
+#message {
+  font-size: 25px;
+  color: white;
+}
+
+.message {
+  text-align: center;
+  width: 100%;
 }
