@@ -174,37 +174,6 @@ export default [
 
       sync mode reference chart:
 
-TABLE IN MARKDOWN
-    mode|   |   |   |   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
-
-      mode|input|output
-      SY0
-      SY1
-      SY2
-      SY3
-      SY4
-      SY5
-
-      input
-      stereo
-      stereo
-      sync
-      sync
-      mono/sync
-      mono/sync
-
-      output
-      stereo
-      mono/sync
-      stereo
-      mono/sync
-      stereo
-      mono/sync
-
       video tutorial:
       LÄNK MED VIDEO - HUR FUNKAR DET?
 

@@ -13,8 +13,12 @@ app.use(bodyParser.json())
 // Tells express to add the "Access-Control-Allow-Origin" header to allow requests from anywhere.
 app.use(cors())
 
+const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/faq-api"
+mongoose.connect(mongoUrl, { useMongoClient: true })
+
 // Connect to MongoDB, on the "products-api" database. If the db doesn't exist, mongo will create it.
-mongoose.connect("mongodb://localhost/faq-api", { useMongoClient: true })
+// commented out before deploy
+// mongoose.connect("mongodb://localhost/faq-api", { useMongoClient: true })
 
 // This makes mongo use ES6 promises, instead of its own implementation
 mongoose.Promise = Promise
@@ -106,4 +110,8 @@ app.get("/answers", (req, res) => {
   })
 })
 
-app.listen(8080, () => console.log("FAQ API listening on port 8080!"))
+// app.listen(8080, () => console.log("FAQ API listening on port 8080!"))
+const port = process.env.PORT || 8080
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
+})
