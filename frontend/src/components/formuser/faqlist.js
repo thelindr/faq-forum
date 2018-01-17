@@ -6,9 +6,6 @@ import CurrentFAQ from "./currectFAQ"
 export default class Faqlist extends React.Component {
 
   render() {
-    // const categories = CurrentFAQ
-    // const selectedCategory = categories.match.params.category
-    // console.log(selectedCategory)
     return (
       <div className="Faq-list">
         {CurrentFAQ.map(item => (
