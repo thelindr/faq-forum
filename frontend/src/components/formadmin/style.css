@@ -1,7 +1,12 @@
-.answer {
+.admincontroller {
+  margin-top: 100px; 
+  text-align: center;
   width: 50%;
+}
+
+.answer {
+  width: 100%;
   padding: 50px;
-  margin: auto;
   margin-bottom: 50px;
   display: flex;
   flex-flow: wrap;
@@ -15,18 +20,27 @@
 .adminpage {
   display: flex;
   flex-flow: wrap;
+  justify-content: space-around;
   background: grey;
 }
 
 .unanswered {
+  border: 2px solid black;
   padding: 20px;
 }
 
 #admintextarea {
   padding: 20px;
-  margin: 10px;
   resize: none;
   width: 100%;
   height: 100px;
   border-radius: 20px;
+}
+
+.q-item {
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
 }

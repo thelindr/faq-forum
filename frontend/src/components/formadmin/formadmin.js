@@ -70,6 +70,7 @@ class Formadmin extends React.Component {
       <div className="adminpage">
 
         <div className="unanswered">
+          <p>unanswered questions {this.props.questions.length}</p>
           {notAnsweredQuestions.map(item => (
             <QListItem
               handleChosen={this.handleChosen}
@@ -82,23 +83,22 @@ class Formadmin extends React.Component {
           ))}
         </div>
 
-        <div className="answer">
+        <div className="admincontroller">
+          <div className="answer">
 
-          <p>{this.props.questions.length}</p>
+            <input type="text" value={selectedQuestion && selectedQuestion.title} />
+            <textarea id="admintextarea" type="text" value={selectedQuestion && selectedQuestion.question} />
 
-          <input type="text" value={selectedQuestion && selectedQuestion.title} />
-          <textarea id="admintextarea" type="text" value={selectedQuestion && selectedQuestion.question} />
+            <h1>Add your answer</h1>
+            <form id="marginminus" onSubmit={this.handleSubmit}>
+              <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="First name" />
+              <input type="text" value={this.state.lastname} onChange={this.handleLastame} placeholder="Last name" />
+              <textarea id="admintextarea" type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="Enter you answer" />
+              <button>Add</button>
+            </form>
 
-          <h1>Add your answer</h1>
-          <form id="marginminus" onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="First name" />
-            <input type="text" value={this.state.lastname} onChange={this.handleLastame} placeholder="Last name" />
-            <input type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="Enter you answer" />
-            <button>Add</button>
-          </form>
-
+          </div>
         </div>
-
       </div>
     )
   }
