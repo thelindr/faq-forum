@@ -1,7 +1,7 @@
 import React from "react"
 // import { Link } from "react-router-dom"
 import Faqitem from "./faqitem"
-import CurrentFAQ from "./currectFAQ"
+import CurrentFAQ from "./currentFAQ"
 
 export default class Faqlist extends React.Component {
 
