@@ -1,8 +1,32 @@
 .answer {
-  width: 30%;
+  width: 50%;
+  padding: 50px;
   margin: auto;
-  margin-top: 200px;
+  margin-bottom: 50px;
   display: flex;
   flex-flow: wrap;
   justify-content: space-around;
+  border: 2px solid black;
+  border-radius: 20px;
+  background: grey;
+  text-align: center;
+}
+
+.adminpage {
+  display: flex;
+  flex-flow: wrap;
+  background: grey;
+}
+
+.unanswered {
+  padding: 20px;
+}
+
+#admintextarea {
+  padding: 20px;
+  margin: 10px;
+  resize: none;
+  width: 100%;
+  height: 100px;
+  border-radius: 20px;
 }

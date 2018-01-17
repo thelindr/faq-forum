@@ -79,6 +79,7 @@ class Formuser extends React.Component {
     return (
       <div>
         <form className="ask" onSubmit={this.handleSubmit}>
+          <p>teenage engineering</p>
           <input
             type="text"
             value={this.state.firstname}
@@ -99,7 +100,7 @@ class Formuser extends React.Component {
             value={this.state.title}
             onChange={this.handleTitle}
             placeholder="title" />
-          <textarea
+          <textarea id="usertextarea"
             type="text"
             value={this.state.question}
             onChange={this.handleQuestion}
@@ -110,7 +111,7 @@ class Formuser extends React.Component {
             value={this.state.category}
             onChange={this.handleCategory}
             placeholder="category">
-            <option value="" selected disabled hidden>Choose here</option>
+            <option value="" selected disabled hidden>Choose category here</option>
             <option
               value="OP-1">OP-1
             </option>
