@@ -79,7 +79,7 @@ class Formuser extends React.Component {
     return (
       <div>
         <form className="ask" onSubmit={this.handleSubmit}>
-          <p>teenage engineering</p>
+          <p id="colorwhite">teenage engineering</p>
           <input
             type="text"
             value={this.state.firstname}
