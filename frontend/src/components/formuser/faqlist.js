@@ -6,7 +6,6 @@ import CurrentFAQ from "./currectFAQ"
 export default class Faqlist extends React.Component {
 
   render() {
-    // const categories = CurrentFAQ
     const selectedCategory = this.props.match.params.category
     const filteredByCategory = CurrentFAQ.filter((item => item.category === selectedCategory))
     console.log("selected:", selectedCategory)

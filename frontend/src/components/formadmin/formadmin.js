@@ -67,22 +67,10 @@ class Formadmin extends React.Component {
     const selectedQuestion = questions.find(question => (question._id === this.state.selectedId))
     console.log("selected question", selectedQuestion)
     return (
-      <div className="answer">
-        <form className="form-admin-question">
-          <p>{this.props.questions.length}</p>
+      <div className="adminpage">
 
-          <input type="text" value={selectedQuestion && selectedQuestion.title} />
-          <input type="text" value={selectedQuestion && selectedQuestion.question} />
-        </form>
-
-        <h1>Add your answer</h1>
-        <form className="form-admin-answer" onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="First name" />
-          <input type="text" value={this.state.lastname} onChange={this.handleLastame} placeholder="Last name" />
-          <input type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="Enter you answer" />
-          <button>Add</button>
-        </form>
-        <div>
+        <div className="unanswered">
+          <p>unanswered questions {this.props.questions.length}</p>
           {notAnsweredQuestions.map(item => (
             <QListItem
               handleChosen={this.handleChosen}
@@ -93,6 +81,23 @@ class Formadmin extends React.Component {
               firstname={item.firstname}
               email={item.email} />
           ))}
+        </div>
+
+        <div className="admincontroller">
+          <div className="answer">
+
+            <input type="text" value={selectedQuestion && selectedQuestion.title} />
+            <textarea id="admintextarea" type="text" value={selectedQuestion && selectedQuestion.question} />
+
+            <h1>Add your answer</h1>
+            <form id="marginminus" onSubmit={this.handleSubmit}>
+              <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="First name" />
+              <input type="text" value={this.state.lastname} onChange={this.handleLastame} placeholder="Last name" />
+              <textarea id="admintextarea" type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="Enter you answer" />
+              <button>Add</button>
+            </form>
+
+          </div>
         </div>
       </div>
     )
