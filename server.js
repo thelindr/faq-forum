@@ -28,6 +28,7 @@ mongoose.connection.on("error", err => console.error("Connection error:", err))
 mongoose.connection.once("open", () => console.log("Connected to mongodb"))
 
 // Set up connection for refs between question and answer
+// const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 // This is the beginning of a model for the Product object.   // Add more attributes to your product here.
@@ -63,7 +64,8 @@ const Question = mongoose.model("Question", {
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+  answer: {type: Schema.Types.ObjectId, ref: "Answer"}
 })
 
 const Answer = mongoose.model("Answer", {
