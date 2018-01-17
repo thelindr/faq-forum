@@ -26,19 +26,19 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-      <div>
-        <Nav />
-        <Faqlist />
-        <Route path="/formuser" exact component={Formuser} />
-        <Route
-          exact
-          path="/formadmin"
-          render={routeProps =>
-            <Formadmin
-            {...routeProps}
-            questions={this.state.questionAPI} />
-          } />
-      </div>
+        <div>
+          <Nav />
+          <Faqlist />
+          <Route path="/formuser" component={Formuser} />
+          <Route
+            exact
+            path="/formadmin"
+            render={routeProps =>
+              <Formadmin
+                {...routeProps}
+                questions={this.state.questionAPI} />
+            } />
+        </div>
       </BrowserRouter>
     )
   }
