@@ -1,3 +1,24 @@
+.adminpage {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  background: black;
+  padding: 10px;
+}
+
+.unanswered {
+  margin-top: 100px;
+  border: 1px solid white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.questions {
+  margin: 0;
+  padding: 0;
+}
+
 .admincontroller {
   margin-top: 100px; 
   text-align: center;
@@ -7,26 +28,28 @@
 .answer {
   width: 100%;
   padding: 50px;
+  padding-top: 30px;
+  margin-left: 250px;
   margin-bottom: 50px;
   display: flex;
   flex-flow: wrap;
   justify-content: space-around;
-  border: 2px solid black;
+  border: 1px solid white;
   border-radius: 20px;
-  background: grey;
+  background: black;
   text-align: center;
 }
 
-.adminpage {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
-  background: grey;
-}
-
-.unanswered {
+.q-item {
+  width: 100%;
   border: 2px solid black;
+  border-radius: 20px;
   padding: 20px;
+  margin: 10px;
+  margin-left: 0;
+  text-align: left;
+  background: white;
+  color: black;
 }
 
 #admintextarea {
@@ -37,10 +60,6 @@
   border-radius: 20px;
 }
 
-.q-item {
-  width: 100%;
-  border: 2px solid black;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 10px;
+#buttonmargin {
+  margin-top: 20px;
 }
