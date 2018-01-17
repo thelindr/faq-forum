@@ -3,7 +3,8 @@ import { BrowserRouter, Route } from "react-router-dom"
 import Formuser from "../components/formuser/formuser"
 import Formadmin from "../components/formadmin/formadmin"
 import Nav from "../components/nav"
-import Faqlist from "../components/formuser/faqlist"
+import Faqlist from "./formuser/faqlist"
+import Categories from "./formuser/categories/categories"
 // import QList from "../components/formadmin/qlist"
 
 class App extends React.Component {
@@ -28,13 +29,21 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           <Nav />
-          <Faqlist />
-          <Route exact path="/formuser" component={Formuser} />
+          {/* <Faqlist /> */}
+          <Categories />
           <Route
             exact
-            path="/formuser/:category"
+            path="/formuser"
             render={routeProps =>
               <Formuser
+                {...routeProps}
+                questions={this.state.questionAPI} />
+            } />
+          <Route
+            exact
+            path="/:category"
+            render={routeProps =>
+              <Faqlist
                 {...routeProps}
                 questions={this.state.questionAPI} />
             } />
