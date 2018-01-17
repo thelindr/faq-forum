@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import "./style.css"
 import QListItem from "./qlistitem"
+import Createnewfaq from "../createnewfaq/createnewfaq"
 
 class Formadmin extends React.Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class Formadmin extends React.Component {
       firstname: "",
       lastname: "",
       answer: "",
-      selectedId: ""
+      selectedId: "",
+      isHidden: true
     }
   }
 
@@ -37,6 +39,20 @@ class Formadmin extends React.Component {
     this.setState({
       question: event.target.value
     })
+  }
+
+  toggleHidden = () => {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
+
+  getFaqbuttontext = () => {
+    if (this.state.isHidden) {
+      return "create new faq"
+    } else {
+      return "close"
+    }
   }
 
   handleSubmit = event => {
@@ -104,7 +120,10 @@ class Formadmin extends React.Component {
         </div>
 
         <div className="buttoncreatenew">
-          <Link to="/formadmin/createnewfaq"><button id="buttoncreatenew"> create a new FAQ </button></Link>
+          <button id="buttoncreatenew" onClick={this.toggleHidden.bind(this)}> {this.getFaqbuttontext()} </button>
+          <div id="newfaqtoggle">
+            {!this.state.isHidden && <Createnewfaq />}
+          </div>
         </div>
       </div>
     )

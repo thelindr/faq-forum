@@ -80,9 +80,10 @@ class Createnewfaq extends React.Component {
   render() {
     return (
       <div>
-        <form className="ask" onSubmit={this.handleSubmit}>
+        <form className="newfaqbox" onSubmit={this.handleSubmit}>
           <p id="colorwhite">create new faq</p>
           <input
+            id="inputcreate"
             type="text"
             value={this.state.title}
             onChange={this.handleTitle}
@@ -126,7 +127,7 @@ class Createnewfaq extends React.Component {
           <div className="message">
             {this.getMessage()}
           </div>
-          <button type="submit">post</button>
+          <button id="buttocreatenew" type="submit">post</button>
         </form>
       </div>
     )

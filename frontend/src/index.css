@@ -3,13 +3,18 @@
 }
 
 @font-face {
-    font-family: UniversNextPro;
-    src: url(/public/UniversNextPro-Thin.otf);
+  font-family: 'UniversNextPro';
+  font-style: normal;
+  font-weight: thin;
+  src:
+    local('UniversNextPro'),
+    local('UniversNextPro-Thin'),
+    url(/public/UniversNextPro-Thin.otf) format('open type');
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'UniversNextPro';
   font-weight: lighter;
 }

@@ -1,7 +1,7 @@
 .adminpage {
   display: flex;
   flex-flow: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   background: black;
   padding: 10px;
 }
@@ -11,39 +11,19 @@
   border: 1px solid white;
   padding: 20px;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
+  width: 20%;
 }
 
-.questions {
+/*.questions {
   margin: 0;
   padding: 0;
-}
-
-.admincontroller {
-  margin-top: 100px; 
-  text-align: center;
-  width: 50%;
-}
-
-.answer {
-  width: 100%;
-  padding: 50px;
-  padding-top: 30px;
-  /*margin-left: 250px;*/
-  margin-bottom: 50px;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
-  border: 1px solid white;
-  border-radius: 20px;
-  background: black;
-  text-align: center;
-}
+}*/
 
 .q-item {
   width: 100%;
   border: 2px solid black;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 20px;
   margin: 10px;
   margin-left: 0;
@@ -52,30 +32,58 @@
   color: black;
 }
 
+.admincontroller {
+  margin-top: 100px; 
+  text-align: center;
+  width: 40%;
+}
+
+.answer {
+  width: 100%;
+  padding: 50px;
+  padding-top: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: black;
+  text-align: center;
+  margin: 0;
+}
+
 #admintextarea {
   padding: 20px;
   resize: none;
   width: 100%;
   height: 100px;
-  border-radius: 20px;
+  border-radius: 10px;
+}
+
+.buttoncreatenew {
+  text-align: center;
+  width: 30%;
+  margin: 0;
+  margin-top: 100px;
 }
 
 #buttoncreatenew {
-  width: 100%;
   text-align: center;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid black;
   background: black;
   color: white;
   border: 1px solid white;
+  margin: 0;
 }
 
 #buttonstyle{
   width: 20%;
   text-align: center;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid black;
   background: black;
   color: white;
@@ -83,7 +91,7 @@
   margin-top: 20px;
 }
 
-.buttoncreatenew {
-  text-align: center;
-  margin-top: 100px;
+#newfaqtoggle {
+  width: 100%;
+  margin-top: 20px;
 }
