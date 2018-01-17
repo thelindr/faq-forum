@@ -1,12 +1,13 @@
 import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
-import Formuser from "../components/formuser/formuser"
+// import Formuser from "../components/formuser/formuser"
 import Formadmin from "../components/formadmin/formadmin"
 import Nav from "../components/nav"
 import Faqlist from "./formuser/faqlist"
 import Categories from "./formuser/categories/categories"
 import Createnewfaq from "../components/createnewfaq/createnewfaq"
 import Questionbutton from "../components/formuser/questionbutton"
+import Login from "../components/formadmin/login"
 // import QList from "../components/formadmin/qlist"
 
 class App extends React.Component {
@@ -34,6 +35,7 @@ class App extends React.Component {
           <Questionbutton />
           {/* <Faqlist /> */}
           <Categories />
+          <Login />
           {/* <Route
             exact
             path="/formuser"

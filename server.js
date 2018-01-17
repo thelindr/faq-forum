@@ -84,6 +84,15 @@ const Newfaq = mongoose.model("Newfaq", {
   date: { type: Date, default: Date.now }
 })
 
+const Login = mongoose.model("Login", {
+    username: String,
+    password: String,
+    accessToken: {
+      type: String,
+      default: () => uuid()
+    }
+  })
+
 
 app.get("/", (req, res) => {
   res.send("FAQ API")
@@ -132,6 +141,22 @@ app.post("/newfaq", (req, res) => {
 app.get("/newfaq", (req, res) => {
   Newfaq.find().then((allNewfaqs) => {
     res.json(allNewfaqs)
+  })
+})
+
+app.post("/login", (req, res) => {
+  User.findOne({ username: req.body.username }).then(user => {
+    if (user && bcrypt.compareSync(req.body.password, user.password)) {
+      res.json({ message: "Success!", token: user.token, userId: user.id })
+    } else {
+      res.status(401).json({ message: "Authentication failure" })
+    }
+  })
+})
+
+app.get("/login", (req, res) => {
+  Login.find().then((allLogins) => {
+    res.json(allLogins)
   })
 })
 
