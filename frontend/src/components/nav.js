@@ -20,7 +20,7 @@ export default class Nav extends React.Component {
     return (
       <div className="Nav">
         {/* <button> <Link to="/formuser"> Formuser </Link></button> */}
-        <button onClick={this.toggleHiddenlogin.bind(this)}> admin </button>
+        <button className="adminbutton" onClick={this.toggleHiddenlogin.bind(this)}> admin </button>
         {!this.state.isHidden && <Login />}
       </div>
     )

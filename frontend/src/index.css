@@ -18,3 +18,12 @@ body {
   font-family: 'UniversNextPro';
   font-weight: lighter;
 }
+
+.adminbutton {
+  border-radius: 10px;
+  background: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+
+}
