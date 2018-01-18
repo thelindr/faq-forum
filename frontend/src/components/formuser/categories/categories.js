@@ -2,7 +2,7 @@ import React from "react"
 import CategoryButton from "./categorybutton"
 import Formuser from "../formuser"
 import telogo from "./telogo.png"
-import Faqlist from "../faqlist"
+import Nav from "../../nav"
 
 const categories = [
   "OP-1",
@@ -38,6 +38,7 @@ export default class Categories extends React.Component {
   render() {
     return (
       <div>
+        <Nav />
         <div className="headertext">
           <img src={telogo} alt="TELOGO" width="30%" />
           <h1 id="nomargin"> frequently asked questions</h1>

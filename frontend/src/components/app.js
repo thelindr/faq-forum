@@ -28,7 +28,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Nav />
+          {/* <Nav /> */}
           {/* <Faqlist /> */}
           {/* <Questionbutton /> */}
           {/* <Route

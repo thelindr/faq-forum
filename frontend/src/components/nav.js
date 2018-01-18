@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import Login from "./formadmin/login"
+import Categories from "./formuser/categories/categories"
 import telogo from "./formuser/categories/telogo.png"
 
 export default class Nav extends React.Component {
