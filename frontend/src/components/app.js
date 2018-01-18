@@ -33,7 +33,6 @@ class App extends React.Component {
         <div>
           <Nav />
           {/* <Faqlist /> */}
-          <Categories />
           {/* <Questionbutton /> */}
           {/* <Route
             exact
@@ -43,6 +42,10 @@ class App extends React.Component {
                 {...routeProps}
                 questions={this.state.questionAPI} />
             } /> */}
+          <Route
+            path="/"
+            exact
+            component={Categories} />
           <Route
             exact
             path="/:category"
@@ -63,6 +66,10 @@ class App extends React.Component {
             exact
             path="/formadmin/createnewfaq"
             component={Createnewfaq} />
+          {/* <Route
+            exact
+            path="/login"
+            component={Login} /> */}
         </div>
       </BrowserRouter>
     )
