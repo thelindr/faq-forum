@@ -77,9 +77,9 @@ select {
 
 .buttoncat {
   border-radius: 10px;
-  background: black;
-  border: 1px solid white;
-  color: white;
+  background: white;
+  border: 3px solid black;
+  color: black;
   margin: 10px;
   padding-left: 20px;
   padding-right: 20px;
