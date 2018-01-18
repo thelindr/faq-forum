@@ -64,6 +64,7 @@ class Formuser extends React.Component {
         body: JSON.stringify(this.state)
       }).then(response => {
         if (response.ok) {
+          this.props.onAsk()
           this.setState({
             firstname: "",
             lastname: "",
