@@ -72,9 +72,6 @@ select {
   width: 100%;
 }
 
-.oneCategory {
-}
-
 .buttoncat {
   border-radius: 10px;
   background: white;
@@ -100,6 +97,9 @@ select {
 }
 
 .headertext {
+  /* font-family: GT Walsheim, monospace;
+  font-style: normal;
+  font-weight: regular; */
   text-align: center;
   font-size: 30px;
   margin-top: 0;
