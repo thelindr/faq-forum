@@ -1,4 +1,5 @@
 import React from "react"
+import {withRouter} from "react-router-dom"
 
 class Login extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ handleSubmit = event => {
       body: JSON.stringify(this.state)
     }).then(response => {
       if (response.ok) {
-        this.setState({ message: `Welcome ${this.state.username}` })
+        this.props.history.push("/formadmin")
       } else {
         this.setState({ message: "unknown user" })
       }
@@ -99,4 +100,4 @@ render() {
 }
 }
 
-export default Login
+export default withRouter(Login)
