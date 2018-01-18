@@ -55,7 +55,7 @@ export default class Categories extends React.Component {
         <div className="questionbutton">
           <button className="buttoncat" onClick={this.toggleHiddenbox}>{this.askQuesetionbuttontext()} </button>
           <div id="newfaqtoggle">
-            {!this.state.isHidden && <Formuser />}
+            {!this.state.isHidden && <Formuser onAsk={this.toggleHiddenbox} />}
           </div>
           <Faqlist />
         </div>
