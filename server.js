@@ -2,6 +2,8 @@ import express from "express"
 import bodyParser from "body-parser"
 import mongoose from "mongoose"
 import cors from "cors"
+import uuid from "uuid/v4"
+import bcrypt from "bcrypt-nodejs"
 
 // console.log("Hello world!")
 
@@ -85,10 +87,10 @@ const Newfaq = mongoose.model("Newfaq", {
 const Login = mongoose.model("Login", {
     username: String,
     password: String,
-    // accessToken: {
-    //   type: String,
-    //   default: () => uuid()
-    // }
+    accessToken: {
+      type: String,
+      default: () => uuid()
+    }
   })
 
 
@@ -149,16 +151,52 @@ app.get("/newfaq", (req, res) => {
 //     .then(() => { res.status(201).send("login created") })
 //     .catch(err => { res.status(400).send(err) })
 // })
-
-// app.post("/login", (req, res) => {
-//   .findOne({ username: req.body.username }).then(user => {
-//     if (user && bcrypt.compareSync(req.body.password, user.password)) {
-//       res.json({ message: "Success!", token: user.token, userId: user.id })
-//     } else {
-//       res.status(401).json({ message: "Authentication failure" })
+//
+// app.post("/users", (req, res) => {
+//   const user = new Login(req.body {
+//     if (user.password) {
+//       user.password = bcrypt.hashSync(user.password)
 //     }
-//   })
+//     user.save().then(() => {
+//       res.status(201).json({ message: "created!" })
+//     }).catch(err => {
+//       res.status(400).json({ message: "oh no", errors: err.errors })
+//     })
+//   }
 // })
+
+app.post("/users", (req, res) => {
+  const { password } = req.body
+  const hash = bcrypt.hashSync(password)
+
+ const user = new Login({
+    username: req.body.username,
+    password: hash
+  })
+
+ user.save().then(() => {
+    res.status(201).json({ message: "user created!" })
+  }).catch(err => {
+    res.status(400).json({ message: "You got an error!", errors: err.errors })
+  })
+})
+
+app.get("/users", (req, res) => {
+  Login.find().then((allUsers) => {
+    res.json(allUsers)
+  })
+})
+
+
+app.post("/login", (req, res) => {
+  Login.findOne({ username: req.body.username }).then(user => {
+    if (user && bcrypt.compareSync(req.body.password, user.password)) {
+      res.json({ message: "Success!", token: user.token, userId: user.id })
+    } else {
+      res.status(401).json({ message: "Authentication failure" })
+    }
+  })
+})
 
 app.get("/login", (req, res) => {
   Login.find().then((allLogins) => {
