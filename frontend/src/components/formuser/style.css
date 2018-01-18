@@ -113,3 +113,11 @@ select {
   margin-top: 0;
   margin-bottom: 60px;
 }
+
+.accordion-answer {
+  display: none;
+}
+
+.active + .accordion-answer {
+  display: block;
+}
