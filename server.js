@@ -153,7 +153,7 @@ app.get("/newfaq", (req, res) => {
 // })
 
 // app.post("/login", (req, res) => {
-//   User.findOne({ username: req.body.username }).then(user => {
+//   .findOne({ username: req.body.username }).then(user => {
 //     if (user && bcrypt.compareSync(req.body.password, user.password)) {
 //       res.json({ message: "Success!", token: user.token, userId: user.id })
 //     } else {

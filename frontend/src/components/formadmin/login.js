@@ -36,10 +36,8 @@ handleSubmit = event => {
       body: JSON.stringify(this.state)
     }).then(response => {
       if (response.ok) {
-        console.log("OK")
         this.setState({ message: `Welcome ${this.state.username}` })
       } else {
-        console.log("NOK")
         this.setState({ message: "unknown user" })
       }
       this.setState({
