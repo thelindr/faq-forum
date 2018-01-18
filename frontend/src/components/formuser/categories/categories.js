@@ -3,6 +3,7 @@ import CategoryButton from "./categorybutton"
 import Formuser from "../formuser"
 import telogo from "./telogo.png"
 import Nav from "../../nav"
+import Faqlist from "../faqlist"
 
 const categories = [
   "OP-1",
@@ -52,10 +53,11 @@ export default class Categories extends React.Component {
           ))}
         </div>
         <div className="questionbutton">
-          <button className="buttoncat" onClick={this.toggleHiddenbox.bind(this)}>{this.askQuesetionbuttontext()} </button>
+          <button className="buttoncat" onClick={this.toggleHiddenbox}>{this.askQuesetionbuttontext()} </button>
           <div id="newfaqtoggle">
             {!this.state.isHidden && <Formuser />}
           </div>
+          <Faqlist />
         </div>
       </div>
     )

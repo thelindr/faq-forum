@@ -84,7 +84,9 @@ class Formadmin extends React.Component {
     console.log("selected question", selectedQuestion)
     return (
       <div className="Formadmin">
-        <button className="exitbutton">exit</button>
+        <div className="exitbuttondiv">
+          <Link to="/"><button className="exitbutton">exit</button></Link>
+        </div>
         <div className="adminpage">
 
           <div className="unanswered">
@@ -105,7 +107,6 @@ class Formadmin extends React.Component {
 
           <div className="admincontroller">
             <div className="answer">
-
               <p id="colorwhite">question</p>
               <input type="text" placeholder="title" value={selectedQuestion && selectedQuestion.title} />
               <textarea id="admintextarea" placeholder="question" type="text" value={selectedQuestion && selectedQuestion.question} />

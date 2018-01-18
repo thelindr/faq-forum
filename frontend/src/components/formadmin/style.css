@@ -13,7 +13,7 @@
 }
 
 .unanswered {
-  margin-top: 100px;
+  margin-top: 50px;
   border: 1px solid white;
   padding: 20px;
   text-align: center;
@@ -39,7 +39,7 @@
 }
 
 .admincontroller {
-  margin-top: 100px; 
+  margin-top: 50px; 
   text-align: center;
   width: 40%;
 }
@@ -71,7 +71,7 @@
   text-align: center;
   width: 30%;
   margin: 0;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 #buttoncreatenew {

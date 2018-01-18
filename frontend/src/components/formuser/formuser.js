@@ -136,13 +136,13 @@ class Formuser extends React.Component {
               value="OP-1">OP-1
             </option>
             <option
-              value="PocketOperator">pocket operator
+              value="pocket operator">pocket operator
             </option>
             <option
               value="OD-11">OD-11
             </option>
             <option
-              value="Checkout&Shipping">checkout & shipping
+              value="checkout & shipping">checkout & shipping
             </option>
             <option
               value="other">other
