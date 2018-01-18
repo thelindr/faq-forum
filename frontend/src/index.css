@@ -21,11 +21,12 @@ body {
 
 .adminbutton {
   border-radius: 10px;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   margin: 20px;
   margin-bottom: 0;
   padding: 20px;
+  border: 2px solid black;
 }
 
 .logoclass {
