@@ -119,7 +119,7 @@ class Formadmin extends React.Component {
         </div>
 
         <div className="buttoncreatenew">
-          <button id="buttoncreatenew" onClick={this.toggleHidden.bind(this)}> {this.getFaqbuttontext()} </button>
+          <button id="buttoncreatenew" onClick={this.toggleHidden}> {this.getFaqbuttontext()} </button>
           <div id="newfaqtoggle">
             {!this.state.isHidden && <Createnewfaq />}
           </div>
