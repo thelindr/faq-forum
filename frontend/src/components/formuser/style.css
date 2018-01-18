@@ -97,12 +97,9 @@ select {
 }
 
 .headertext {
-  /* font-family: GT Walsheim, monospace;
-  font-style: normal;
-  font-weight: regular; */
   text-align: center;
-  font-size: 30px;
-  margin-top: 0;
+  font-size: 3vw;
+  margin: 2vh;
 }
 
 #nomargin {
@@ -124,4 +121,12 @@ select {
 
 .accordion-question:hover {
   cursor: pointer;
+}
+
+h2{
+  font-size: 4vw;
+}
+
+h3 {
+  font-size: 2vw;
 }
