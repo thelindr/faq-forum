@@ -82,46 +82,49 @@ class Formadmin extends React.Component {
     const selectedQuestion = questions.find(question => (question._id === this.state.questionId))
     console.log("selected question", selectedQuestion)
     return (
-      <div className="adminpage">
+      <div>
+        <button>exit</button>
+        <div className="adminpage">
 
-        <div className="unanswered">
-          <p id="colorwhite">unanswered questions {this.props.questions.length}</p>
-          <div className="questions">
-            {notAnsweredQuestions.map(item => (
-              <QListItem
-                handleChosen={this.handleChosen}
-                id={item._id}
-                question={item.question}
-                title={item.title}
-                category={item.category}
-                firstname={item.firstname}
-                email={item.email} />
-            ))}
+          <div className="unanswered">
+            <p id="colorwhite">unanswered questions {this.props.questions.length}</p>
+            <div className="questions">
+              {notAnsweredQuestions.map(item => (
+                <QListItem
+                  handleChosen={this.handleChosen}
+                  id={item._id}
+                  question={item.question}
+                  title={item.title}
+                  category={item.category}
+                  firstname={item.firstname}
+                  email={item.email} />
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="admincontroller">
-          <div className="answer">
+          <div className="admincontroller">
+            <div className="answer">
 
-            <h1 id="colorwhite">question</h1>
-            <input type="text" placeholder="title" value={selectedQuestion && selectedQuestion.title} />
-            <textarea id="admintextarea" placeholder="question" type="text" value={selectedQuestion && selectedQuestion.question} />
+              <h1 id="colorwhite">question</h1>
+              <input type="text" placeholder="title" value={selectedQuestion && selectedQuestion.title} />
+              <textarea id="admintextarea" placeholder="question" type="text" value={selectedQuestion && selectedQuestion.question} />
 
-            <h1 id="colorwhite">answer</h1>
-            <form onSubmit={this.handleSubmit}>
-              <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="First name" />
-              <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="Last name" />
-              <textarea id="admintextarea" type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="Enter you answer" />
-              <button id="buttonstyle">reply</button>
-            </form>
+              <h1 id="colorwhite">answer</h1>
+              <form onSubmit={this.handleSubmit}>
+                <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="First name" />
+                <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="Last name" />
+                <textarea id="admintextarea" type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="Enter you answer" />
+                <button id="buttonstyle">reply</button>
+              </form>
 
+            </div>
           </div>
-        </div>
 
-        <div className="buttoncreatenew">
-          <button id="buttoncreatenew" onClick={this.toggleHidden}> {this.getFaqbuttontext()} </button>
-          <div id="newfaqtoggle">
-            {!this.state.isHidden && <Createnewfaq />}
+          <div className="buttoncreatenew">
+            <button id="buttoncreatenew" onClick={this.toggleHidden}> {this.getFaqbuttontext()} </button>
+            <div id="newfaqtoggle">
+              {!this.state.isHidden && <Createnewfaq />}
+            </div>
           </div>
         </div>
       </div>
