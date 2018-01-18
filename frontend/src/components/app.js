@@ -32,9 +32,9 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           <Nav />
-          <Questionbutton />
           {/* <Faqlist /> */}
           <Categories />
+          {/* <Questionbutton /> */}
           {/* <Route
             exact
             path="/formuser"

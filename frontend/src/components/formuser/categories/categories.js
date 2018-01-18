@@ -1,5 +1,6 @@
 import React from "react"
 import CategoryButton from "./categorybutton"
+import Formuser from "../formuser"
 
 const categories = [
   "OP-1",
@@ -9,6 +10,18 @@ const categories = [
 ]
 
 export default class Categories extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isHidden: true
+    }
+  }
+
+  toggleHiddenbox = () => {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
 
   render() {
     return (
@@ -17,6 +30,10 @@ export default class Categories extends React.Component {
           <CategoryButton
             item={item} />
         ))}
+        <div className="questionbutton">
+          <button className="buttoncat" onClick={this.toggleHiddenbox.bind(this)}>ask us a question</button>
+          {!this.state.isHidden && <Formuser />}
+        </div>
       </div>
     )
   }

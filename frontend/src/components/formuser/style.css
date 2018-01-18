@@ -78,3 +78,9 @@ select {
   flex-flow: wrap;
   justify-content: center;
 }
+
+.questionbutton {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}

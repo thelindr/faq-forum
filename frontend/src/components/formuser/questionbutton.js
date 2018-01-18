@@ -18,8 +18,8 @@ class Questionbutton extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.toggleHiddenbox.bind(this)}>ask us a question</button>
+      <div className="questionbutton">
+        <button className="buttoncat" onClick={this.toggleHiddenbox.bind(this)}>ask us a question</button>
         {!this.state.isHidden && <Formuser />}
       </div>
     )
