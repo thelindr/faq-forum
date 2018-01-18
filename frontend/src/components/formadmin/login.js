@@ -1,5 +1,5 @@
 import React from "react"
-import {withRouter} from "react-router-dom"
+import { withRouter } from "react-router-dom"
 
 class Login extends React.Component {
   constructor(props) {
@@ -7,7 +7,7 @@ class Login extends React.Component {
     this.state = {
       username: "",
       password: "",
-      message: ""
+      message: "",
     }
   }
 
@@ -38,6 +38,7 @@ handleSubmit = event => {
     }).then(response => {
       if (response.ok) {
         this.props.history.push("/formadmin")
+        {this.props.isHidden}
       } else {
         this.setState({ message: "unknown user" })
       }
