@@ -6,9 +6,6 @@ import Nav from "../components/nav"
 import Faqlist from "./formuser/faqlist"
 import Categories from "./formuser/categories/categories"
 import Createnewfaq from "../components/createnewfaq/createnewfaq"
-import Questionbutton from "../components/formuser/questionbutton"
-import Login from "../components/formadmin/login"
-// import QList from "../components/formadmin/qlist"
 
 class App extends React.Component {
   constructor(props) {

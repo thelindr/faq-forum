@@ -77,7 +77,6 @@ const Answer = mongoose.model("Answer", {
 })
 
 const Newfaq = mongoose.model("Newfaq", {
-  title: String,
   question: String,
   answer: String,
   category: String,
