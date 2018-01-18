@@ -63,8 +63,7 @@ const Question = mongoose.model("Question", {
   date: {
     type: Date,
     default: Date.now
-  },
-  answer: {type: Schema.Types.ObjectId, ref: "Answer"}
+  }
 })
 
 const Answer = mongoose.model("Answer", {
@@ -72,7 +71,7 @@ const Answer = mongoose.model("Answer", {
   lastname: String,
   answer: String,
   date: { type: Date, default: Date.now },
-  question: {type: Schema.Types.ObjectId, ref: "Question"}
+  questionId: {type: Schema.Types.ObjectId, ref: "Question"}
 })
 
 const Newfaq = mongoose.model("Newfaq", {

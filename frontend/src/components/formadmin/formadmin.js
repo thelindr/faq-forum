@@ -11,7 +11,7 @@ class Formadmin extends React.Component {
       firstname: "",
       lastname: "",
       answer: "",
-      selectedId: "",
+      questionId: "",
       isHidden: true
     }
   }
@@ -57,6 +57,7 @@ class Formadmin extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    console.log(this.state)
     fetch("http://localhost:8080/answers", {
       method: "POST",
       headers: {
@@ -64,15 +65,13 @@ class Formadmin extends React.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(this.state)
-    }).then(response => (
-      response.json()
-    ))
+    })
   }
 
   handleChosen = id => {
     console.log(id)
     this.setState({
-      selectedId: id
+      questionId: id
     })
   }
 
@@ -80,7 +79,7 @@ class Formadmin extends React.Component {
     // shorthand version of const questions = this.props.questions
     const { questions } = this.props
     const notAnsweredQuestions = questions.filter((item => item.answered === false))
-    const selectedQuestion = questions.find(question => (question._id === this.state.selectedId))
+    const selectedQuestion = questions.find(question => (question._id === this.state.questionId))
     console.log("selected question", selectedQuestion)
     return (
       <div className="adminpage">
