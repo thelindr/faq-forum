@@ -23,6 +23,16 @@ export default class Categories extends React.Component {
     })
   }
 
+  // askQuesetionbuttontext
+
+  askQuesetionbuttontext = () => {
+    if (this.state.isHidden) {
+      return "ask us a question"
+    } else {
+      return "close"
+    }
+  }
+
   render() {
     return (
       <div className="buttoncategorys">
@@ -31,7 +41,7 @@ export default class Categories extends React.Component {
             item={item} />
         ))}
         <div className="questionbutton">
-          <button className="buttoncat" onClick={this.toggleHiddenbox.bind(this)}>ask us a question</button>
+          <button className="buttoncat" onClick={this.toggleHiddenbox.bind(this)}>{this.askQuesetionbuttontext()} </button>
           {!this.state.isHidden && <Formuser />}
         </div>
       </div>
