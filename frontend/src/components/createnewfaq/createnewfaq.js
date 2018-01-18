@@ -57,7 +57,7 @@ class Createnewfaq extends React.Component {
   }
 
   validateFields = () => {
-    if (this.state.title && this.state.question && this.state.category) {
+    if (this.state.question && this.state.category) {
       return true
     }
     return false
