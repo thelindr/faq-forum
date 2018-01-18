@@ -16,11 +16,19 @@ export default class Nav extends React.Component {
     })
   }
 
+  getAdminbuttontext = () => {
+    if (this.state.isHidden) {
+      return "ADMIN"
+    } else {
+      return "X"
+    }
+  }
+
   render() {
     return (
       <div className="Nav">
         {/* <button> <Link to="/formuser"> Formuser </Link></button> */}
-        <button className="adminbutton" onClick={this.toggleHiddenlogin.bind(this)}> admin </button>
+        <button className="adminbutton" onClick={this.toggleHiddenlogin.bind(this)}> {this.getAdminbuttontext()} </button>
         {!this.state.isHidden && <Login />}
       </div>
     )
