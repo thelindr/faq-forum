@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import "./style.css"
 import QListItem from "./qlistitem"
 import Createnewfaq from "../createnewfaq/createnewfaq"
+import { withRouter } from "react-router-dom"
 
 class Formadmin extends React.Component {
   constructor(props) {
