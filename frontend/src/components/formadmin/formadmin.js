@@ -83,12 +83,12 @@ class Formadmin extends React.Component {
     const selectedQuestion = questions.find(question => (question._id === this.state.questionId))
     console.log("selected question", selectedQuestion)
     return (
-      <div>
-        <button>exit</button>
+      <div className="Formadmin">
+        <button className="exitbutton">exit</button>
         <div className="adminpage">
 
           <div className="unanswered">
-            <p id="colorwhite">unanswered questions {this.props.questions.length}</p>
+            <p id="colorwhite">unanswered questions: {this.props.questions.length}</p>
             <div className="questions">
               {notAnsweredQuestions.map(item => (
                 <QListItem
@@ -106,11 +106,11 @@ class Formadmin extends React.Component {
           <div className="admincontroller">
             <div className="answer">
 
-              <h1 id="colorwhite">question</h1>
+              <p id="colorwhite">question</p>
               <input type="text" placeholder="title" value={selectedQuestion && selectedQuestion.title} />
               <textarea id="admintextarea" placeholder="question" type="text" value={selectedQuestion && selectedQuestion.question} />
 
-              <h1 id="colorwhite">answer</h1>
+              <p id="colorwhite">answer</p>
               <form onSubmit={this.handleSubmit}>
                 <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="First name" />
                 <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="Last name" />

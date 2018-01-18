@@ -20,7 +20,7 @@ export default class Nav extends React.Component {
 
   getAdminbuttontext = () => {
     if (this.state.isHidden) {
-      return "ADMIN"
+      return "admin"
     } else {
       return "X"
     }

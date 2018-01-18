@@ -1,37 +1,23 @@
 .ask {
-  width: 40%;
-  padding: 50px;
+  width: 50%;
+  padding: 4%;
   margin: auto;
   margin-bottom: 50px;
   display: flex;
   flex-flow: wrap;
-  justify-content: space-around;
+  justify-content: center;
   border: 2px solid black;
   border-radius: 20px;
   background: black;
 }
 
-input {
-  width: 100%;
-  padding: 20px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-}
-
-select {
-  width: 110%;
-  height: 30px;
-  margin: 10px;
-  /*margin-bottom: 40px;*/
-  border-radius: 20px;
-  background: black;
-  color: white;
-}
-
 #buttonuser {
+  font-family: Univers Next Pro;
+  font-weight: light;
+  font-size: 1em;
   width: 20%;
   text-align: center;
-  padding: 20px;
+  padding: 20px 0;
   border-radius: 20px;
   border: 1px solid black;
   background: black;
@@ -73,14 +59,8 @@ select {
 }
 
 .buttoncat {
-  border-radius: 10px;
-  background: white;
-  border: 3px solid black;
-  color: black;
-  margin: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 15px;
+  margin: 20px;
+  padding: 5px 20px;
 }
 
 .buttoncategorys {
@@ -98,17 +78,19 @@ select {
 
 .headertext {
   text-align: center;
-  font-size: 3vw;
-  margin: 2vh;
 }
 
+img
+ {
+   min-width: 200px;
+ }
 #nomargin {
   margin: 0;
 }
 
 #notopmargin {
   margin-top: 0;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .accordion-answer {
@@ -123,10 +105,39 @@ select {
   cursor: pointer;
 }
 
-h2{
-  font-size: 4vw;
+
+@media (max-width: 500px){
+  .ask {
+    width: 80%;
+  }
+
+  img
+   {
+     margin-top: 10px;
+   }
+
+  .headertext {
+    font-size: 1em;
+  }
+
+
+  #nomargin {
+    margin: 5px 0;
+  }
+
+  .buttoncat {
+    margin: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
-h3 {
-  font-size: 2vw;
+@media (min-width:01px) and (max-width:800px){
+  .ask {
+    width: 70%;
+  }
+
+}
+
+@media (min-width: 801px){
 }
