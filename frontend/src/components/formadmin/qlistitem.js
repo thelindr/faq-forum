@@ -7,8 +7,8 @@ export default class QListItem extends React.Component {
   render() {
     return (
       <div className="q-item" onClick={this.handleClick}>
-        <p>Category: {this.props.category}</p>
-        <p>Title: {this.props.title}</p>
+        <p>category: {this.props.category}</p>
+        <p>title: {this.props.title}</p>
         {/* <p>Question: {this.props.question}</p> */}
       </div>
     )
