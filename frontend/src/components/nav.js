@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import Login from "./formadmin/login"
+import telogo from "./formuser/categories/telogo.png"
 
 export default class Nav extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class Nav extends React.Component {
 
   render() {
     return (
-      <div className="Nav">
+      <div>
         {/* <button> <Link to="/formuser"> Formuser </Link></button> */}
         <button className="adminbutton" onClick={this.toggleHiddenlogin.bind(this)}> {this.getAdminbuttontext()} </button>
         {!this.state.isHidden && <Login />}

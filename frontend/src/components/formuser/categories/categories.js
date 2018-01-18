@@ -38,7 +38,7 @@ export default class Categories extends React.Component {
     return (
       <div>
         <div className="headertext">
-          <img src={telogo} alt="TELOGO" width="40%"/>
+          <img src={telogo} alt="TELOGO" width="30%"/>
           <h1 id="nomargin"> frequently asked questions</h1>
           <p id="notopmargin">choose your category</p>
         </div>
