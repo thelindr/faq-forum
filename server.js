@@ -87,10 +87,10 @@ const Newfaq = mongoose.model("Newfaq", {
 const Login = mongoose.model("Login", {
     username: String,
     password: String,
-    accessToken: {
-      type: String,
-      default: () => uuid()
-    }
+    // accessToken: {
+    //   type: String,
+    //   default: () => uuid()
+    // }
   })
 
 
@@ -145,14 +145,22 @@ app.get("/newfaq", (req, res) => {
 })
 
 app.post("/login", (req, res) => {
-  User.findOne({ username: req.body.username }).then(user => {
-    if (user && bcrypt.compareSync(req.body.password, user.password)) {
-      res.json({ message: "Success!", token: user.token, userId: user.id })
-    } else {
-      res.status(401).json({ message: "Authentication failure" })
-    }
-  })
+  const login = new Login(req.body)
+
+  login.save()
+    .then(() => { res.status(201).send("login created") })
+    .catch(err => { res.status(400).send(err) })
 })
+
+// app.post("/login", (req, res) => {
+//   User.findOne({ username: req.body.username }).then(user => {
+//     if (user && bcrypt.compareSync(req.body.password, user.password)) {
+//       res.json({ message: "Success!", token: user.token, userId: user.id })
+//     } else {
+//       res.status(401).json({ message: "Authentication failure" })
+//     }
+//   })
+// })
 
 app.get("/login", (req, res) => {
   Login.find().then((allLogins) => {

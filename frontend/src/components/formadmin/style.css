@@ -95,3 +95,29 @@
   width: 100%;
   margin-top: 20px;
 }
+
+.form {
+  border: 2px solid black;
+  width: 25%;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  background: black;
+  box-shadow: 5px 10px lightgrey;
+  color: white;
+}
+
+.loginform {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+.message {
+  text-align: center;
+  width: 100%;
+}
