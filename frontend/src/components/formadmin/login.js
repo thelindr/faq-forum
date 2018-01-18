@@ -38,7 +38,7 @@ handleSubmit = event => {
     }).then(response => {
       if (response.ok) {
         this.props.history.push("/formadmin")
-        {this.props.isHidden}
+        this.props.onLogin()
       } else {
         this.setState({ message: "unknown user" })
       }
