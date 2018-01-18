@@ -35,14 +35,18 @@ export default class Categories extends React.Component {
 
   render() {
     return (
-      <div className="buttoncategorys">
-        {categories.map(item => (
-          <CategoryButton
-            item={item} />
-        ))}
+      <div>
+        <div className="buttoncategorys">
+          {categories.map(item => (
+            <CategoryButton
+              item={item} />
+          ))}
+        </div>
         <div className="questionbutton">
           <button className="buttoncat" onClick={this.toggleHiddenbox.bind(this)}>{this.askQuesetionbuttontext()} </button>
-          {!this.state.isHidden && <Formuser />}
+          <div id="newfaqtoggle">
+            {!this.state.isHidden && <Formuser />}
+          </div>
         </div>
       </div>
     )
