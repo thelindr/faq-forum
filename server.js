@@ -75,6 +75,24 @@ const Answer = mongoose.model("Answer", {
   question: {type: Schema.Types.ObjectId, ref: "Question"}
 })
 
+const Newfaq = mongoose.model("Newfaq", {
+  title: String,
+  question: String,
+  answer: String,
+  category: String,
+  date: { type: Date, default: Date.now }
+})
+
+const Login = mongoose.model("Login", {
+    username: String,
+    password: String,
+    // accessToken: {
+    //   type: String,
+    //   default: () => uuid()
+    // }
+  })
+
+
 app.get("/", (req, res) => {
   res.send("FAQ API")
 })
@@ -108,6 +126,44 @@ app.post("/answers", (req, res) => {
 app.get("/answers", (req, res) => {
   Answer.find().then((allAnswers) => {
     res.json(allAnswers)
+  })
+})
+
+app.post("/newfaq", (req, res) => {
+  const newfaq = new Newfaq(req.body)
+
+  newfaq.save()
+    .then(() => { res.status(201).send("Newfaq created") })
+    .catch(err => { res.status(400).send(err) })
+})
+
+app.get("/newfaq", (req, res) => {
+  Newfaq.find().then((allNewfaqs) => {
+    res.json(allNewfaqs)
+  })
+})
+
+// app.post("/login", (req, res) => {
+//   const login = new Login(req.body)
+//
+//   login.save()
+//     .then(() => { res.status(201).send("login created") })
+//     .catch(err => { res.status(400).send(err) })
+// })
+
+// app.post("/login", (req, res) => {
+//   .findOne({ username: req.body.username }).then(user => {
+//     if (user && bcrypt.compareSync(req.body.password, user.password)) {
+//       res.json({ message: "Success!", token: user.token, userId: user.id })
+//     } else {
+//       res.status(401).json({ message: "Authentication failure" })
+//     }
+//   })
+// })
+
+app.get("/login", (req, res) => {
+  Login.find().then((allLogins) => {
+    res.json(allLogins)
   })
 })
 

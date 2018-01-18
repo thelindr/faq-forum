@@ -1,37 +1,17 @@
 import React from "react"
 import "./style.css"
 
-class Formuser extends React.Component {
+class Createnewfaq extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      firstname: "",
-      lastname: "",
-      email: "",
       title: "",
       question: "",
+      answer: "",
       category: "",
       message: ""
     }
   }
-
-  handleFirstname = event => {
-    this.setState({
-      firstname: event.target.value
-    })
-  }
-
-    handleLastname= event => {
-      this.setState({
-        lastname: event.target.value
-      })
-    }
-
-    handleEmail = event => {
-      this.setState({
-        email: event.target.value
-      })
-    }
 
     handleTitle = event => {
       this.setState({
@@ -45,6 +25,12 @@ class Formuser extends React.Component {
       })
     }
 
+    handleAnswer = event => {
+      this.setState({
+        answer: event.target.value
+      })
+    }
+
     handleCategory = event => {
       this.setState({
         category: event.target.value
@@ -55,7 +41,7 @@ class Formuser extends React.Component {
     event.preventDefault()
     if (this.validateFields() === true) {
       event.preventDefault()
-      fetch("http://localhost:8080/questions", {
+      fetch("http://localhost:8080/newfaq", {
         method: "POST",
         headers: {
           Accept: "application/json, text/plain, */*",
@@ -65,13 +51,11 @@ class Formuser extends React.Component {
       }).then(response => {
         if (response.ok) {
           this.setState({
-            firstname: "",
-            lastname: "",
-            email: "",
             title: "",
             question: "",
+            answer: "",
             category: "",
-            message: "question sent!"
+            message: "question posted to web!"
           }, () => { console.log("State has been reset", response, response.status) })
         }
       })
@@ -81,8 +65,7 @@ class Formuser extends React.Component {
   }
 
   validateFields = () => {
-    if (this.state.firstname && this.state.lastname && this.state.email
-      && this.state.title && this.state.question && this.state.category) {
+    if (this.state.title && this.state.question && this.state.category) {
       return true
     }
     return false
@@ -97,34 +80,27 @@ class Formuser extends React.Component {
   render() {
     return (
       <div>
-        <form className="ask" onSubmit={this.handleSubmit}>
-          <p id="colorwhite">teenage engineering</p>
+        <form className="newfaqbox" onSubmit={this.handleSubmit}>
+          <p id="colorwhite">create new faq</p>
           <input
-            type="text"
-            value={this.state.firstname}
-            onChange={this.handleFirstname}
-            placeholder="firstname" />
-          <input
-            type="text"
-            value={this.state.lastname}
-            onChange={this.handleLastname}
-            placeholder="lastname" />
-          <input
-            type="email"
-            value={this.state.email}
-            onChange={this.handleEmail}
-            placeholder="email" />
-          <input
+            id="inputcreate"
             type="text"
             value={this.state.title}
             onChange={this.handleTitle}
             placeholder="title" />
           <textarea
-            id="usertextareaquestion"
+            id="usertextarea"
             type="text"
             value={this.state.question}
             onChange={this.handleQuestion}
             placeholder="question"
+            spellCheck="false" />
+          <textarea
+            id="usertextarea"
+            type="text"
+            value={this.state.answer}
+            onChange={this.handleAnswer}
+            placeholder="answer"
             spellCheck="false" />
           <select
             type="text"
@@ -151,11 +127,11 @@ class Formuser extends React.Component {
           <div className="message">
             {this.getMessage()}
           </div>
-          <button id="buttonuser" type="submit">ask</button>
+          <button id="buttocreatenew" type="submit">post</button>
         </form>
       </div>
     )
   }
 }
 
-export default Formuser
+export default Createnewfaq

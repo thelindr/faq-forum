@@ -1,5 +1,5 @@
 .ask {
-  width: 30%;
+  width: 40%;
   padding: 50px;
   margin: auto;
   margin-bottom: 50px;
@@ -15,20 +15,20 @@ input {
   width: 100%;
   padding: 20px;
   margin-bottom: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 select {
   width: 110%;
   height: 30px;
   margin: 10px;
-  margin-bottom: 40px;
+  /*margin-bottom: 40px;*/
   border-radius: 20px;
   background: black;
   color: white;
 }
 
-button {
+#buttonuser {
   width: 20%;
   text-align: center;
   padding: 20px;
@@ -37,6 +37,7 @@ button {
   background: black;
   color: white;
   border: 1px solid white;
+  margin-top: 20px;
 }
 
 #usertextarea {
@@ -45,9 +46,70 @@ button {
   resize: none;
   width: 95%;
   height: 100px;
-  border-radius: 20px;
+  border-radius: 10px;
+}
+
+#usertextareaquestion {
+  padding: 20px;
+  /*margin: 10px;*/
+  resize: none;
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
 }
 
 #colorwhite {
   color: white;
+}
+
+#message {
+  font-size: 25px;
+  color: white;
+}
+
+.message {
+  text-align: center;
+  width: 100%;
+}
+
+.oneCategory {
+}
+
+.buttoncat {
+  border-radius: 10px;
+  background: white;
+  border: 3px solid black;
+  color: black;
+  margin: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 15px;
+}
+
+.buttoncategorys {
+  margin: auto;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.questionbutton {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.headertext {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+#nomargin {
+  margin: 0;
+}
+
+#notopmargin {
+  margin-top: 0;
+  margin-bottom: 60px;
 }
