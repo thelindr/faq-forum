@@ -108,6 +108,8 @@ class Formadmin extends React.Component {
           <div className="admincontroller">
             <div className="answer">
               <p id="colorwhite">question</p>
+              <input type="text" placeholder="category" value={selectedQuestion && selectedQuestion.category} />
+              <input type="text" placeholder="name" value={selectedQuestion && selectedQuestion.firstname + " " + selectedQuestion.lastname} />
               <input type="text" placeholder="title" value={selectedQuestion && selectedQuestion.title} />
               <textarea id="admintextarea" placeholder="question" type="text" value={selectedQuestion && selectedQuestion.question} />
 
