@@ -88,3 +88,8 @@ select {
   flex-flow: wrap;
   justify-content: center;
 }
+
+.headertext {
+  text-align: center;
+  font-size: 30px;
+}

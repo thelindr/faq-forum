@@ -36,6 +36,10 @@ export default class Categories extends React.Component {
   render() {
     return (
       <div>
+        <div className="headertext">
+          <h1> frequently asked questions</h1>
+          <p>choose your category</p>
+        </div>
         <div className="buttoncategorys">
           {categories.map(item => (
             <CategoryButton
