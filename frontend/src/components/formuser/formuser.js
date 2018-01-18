@@ -118,7 +118,7 @@ class Formuser extends React.Component {
             type="text"
             value={this.state.title}
             onChange={this.handleTitle}
-            placeholder="title" />
+            placeholder="subject" />
           <textarea
             id="usertextareaquestion"
             type="text"

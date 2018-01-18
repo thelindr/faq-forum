@@ -8,7 +8,8 @@ const categories = [
   "OP-1",
   "pocket operator",
   "OD-11",
-  "checkout and shipping"
+  "checkout and shipping",
+  "other"
 ]
 
 export default class Categories extends React.Component {
@@ -40,9 +41,9 @@ export default class Categories extends React.Component {
       <div>
         <Nav />
         <div className="headertext">
-          <img src={telogo} alt="TELOGO" width="30%"/>
+          <img src={telogo} alt="TELOGO" width="30%" />
           <h1 id="nomargin"> frequently asked questions</h1>
-          <p id="notopmargin">choose your category</p>
+          <h2 id="notopmargin">choose your category</h2>
         </div>
         <div className="buttoncategorys">
           {categories.map(item => (
