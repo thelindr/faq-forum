@@ -10,7 +10,7 @@ export default class Faqitem extends React.Component {
     }
   }
 
-  handleClick = e => {
+  handleClick = () => {
     const toggleMode = !this.state.isHidden
     this.setState({ isHidden: toggleMode })
   }
@@ -24,7 +24,11 @@ export default class Faqitem extends React.Component {
 
     return (
       <div>
-        <div className="accordion-question" onClick={e => this.handleClick(e)}>
+        <div
+          className="accordion-question"
+          onClick={this.handleClick}
+          role="presentation"
+          onKeyDown={this.handleClick}>
           <h2>{this.props.question}</h2>
         </div>
         {!this.state.isHidden && <Answer />}
