@@ -1,6 +1,7 @@
 import React from "react"
 import CategoryButton from "./categorybutton"
 import Formuser from "../formuser"
+import telogo from "./telogo.png"
 
 const categories = [
   "OP-1",
@@ -37,8 +38,9 @@ export default class Categories extends React.Component {
     return (
       <div>
         <div className="headertext">
-          <h1> frequently asked questions</h1>
-          <p>choose your category</p>
+          <img src={telogo} alt="TELOGO" width="40%"/>
+          <h1 id="nomargin"> frequently asked questions</h1>
+          <p id="notopmargin">choose your category</p>
         </div>
         <div className="buttoncategorys">
           {categories.map(item => (

@@ -120,7 +120,7 @@ class Formuser extends React.Component {
             onChange={this.handleTitle}
             placeholder="title" />
           <textarea
-            id="usertextarea"
+            id="usertextareaquestion"
             type="text"
             value={this.state.question}
             onChange={this.handleQuestion}
@@ -151,7 +151,7 @@ class Formuser extends React.Component {
           <div className="message">
             {this.getMessage()}
           </div>
-          <button type="submit">ask</button>
+          <button id="buttonuser" type="submit">ask</button>
         </form>
       </div>
     )
