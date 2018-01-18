@@ -5,19 +5,12 @@ class Createnewfaq extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      title: "",
       question: "",
       answer: "",
       category: "",
       message: ""
     }
   }
-
-    handleTitle = event => {
-      this.setState({
-        title: event.target.value
-      })
-    }
 
     handleQuestion = event => {
       this.setState({
@@ -51,7 +44,6 @@ class Createnewfaq extends React.Component {
       }).then(response => {
         if (response.ok) {
           this.setState({
-            title: "",
             question: "",
             answer: "",
             category: "",
@@ -82,12 +74,6 @@ class Createnewfaq extends React.Component {
       <div>
         <form className="newfaqbox" onSubmit={this.handleSubmit}>
           <p id="colorwhite">create new faq</p>
-          <input
-            id="inputcreate"
-            type="text"
-            value={this.state.title}
-            onChange={this.handleTitle}
-            placeholder="title" />
           <textarea
             id="usertextarea"
             type="text"
