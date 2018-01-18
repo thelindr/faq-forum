@@ -61,3 +61,20 @@ select {
   text-align: center;
   width: 100%;
 }
+
+.oneCategory {
+}
+
+.buttoncat {
+  border-radius: 10px;
+  background: black;
+  border: 1px solid white;
+  color: white;
+  margin: 10px;
+}
+
+.buttoncategorys {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}

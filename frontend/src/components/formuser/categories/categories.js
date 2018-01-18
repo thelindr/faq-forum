@@ -12,7 +12,7 @@ export default class Categories extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="buttoncategorys">
         {categories.map(item => (
           <CategoryButton
             item={item} />
