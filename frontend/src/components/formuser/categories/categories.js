@@ -8,7 +8,8 @@ const categories = [
   "OP-1",
   "pocket operator",
   "OD-11",
-  "checkout and shipping"
+  "checkout and shipping",
+  "other"
 ]
 
 export default class Categories extends React.Component {
