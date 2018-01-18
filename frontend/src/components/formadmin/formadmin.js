@@ -116,7 +116,7 @@ class Formadmin extends React.Component {
               <p id="colorwhite">answer</p>
               <form onSubmit={this.handleSubmit}>
                 <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="first name" />
-                <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="fast name" />
+                <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="last name" />
                 <textarea id="admintextarea" type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="answer" />
                 <button id="buttonstyle">reply</button>
               </form>
