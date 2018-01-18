@@ -144,13 +144,13 @@ app.get("/newfaq", (req, res) => {
   })
 })
 
-app.post("/login", (req, res) => {
-  const login = new Login(req.body)
-
-  login.save()
-    .then(() => { res.status(201).send("login created") })
-    .catch(err => { res.status(400).send(err) })
-})
+// app.post("/login", (req, res) => {
+//   const login = new Login(req.body)
+//
+//   login.save()
+//     .then(() => { res.status(201).send("login created") })
+//     .catch(err => { res.status(400).send(err) })
+// })
 
 // app.post("/login", (req, res) => {
 //   User.findOne({ username: req.body.username }).then(user => {

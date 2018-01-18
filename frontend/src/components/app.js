@@ -35,7 +35,6 @@ class App extends React.Component {
           <Questionbutton />
           {/* <Faqlist /> */}
           <Categories />
-          <Login />
           {/* <Route
             exact
             path="/formuser"
