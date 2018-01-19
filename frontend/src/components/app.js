@@ -29,7 +29,6 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           {/* <Nav /> */}
-          {/* <Faqlist /> */}
           {/* <Questionbutton /> */}
           {/* <Route
             exact
@@ -40,11 +39,12 @@ class App extends React.Component {
                 questions={this.state.questionAPI} />
             } /> */}
           <Route
-            path="/"
             exact
+            path="/"
             component={Categories} />
           <Route
-            path="/:category"
+            exact
+            path="/categories"
             render={routeProps =>
               <Faqlist
                 {...routeProps}
