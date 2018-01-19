@@ -29,7 +29,6 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           {/* <Nav /> */}
-          {/* <Faqlist /> */}
           {/* <Questionbutton /> */}
           {/* <Route
             exact

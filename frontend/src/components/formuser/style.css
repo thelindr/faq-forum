@@ -101,18 +101,24 @@ img
   margin-bottom: 30px;
 }
 
-.accordion-answer {
-  display: none;
+.accordion-container {
+  height: auto;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.active + .accordion-answer {
-  display: block;
+.accordion-question{
+  width: 100%;
+  padding: 2px 15px 1px 15px;
+  background-color: lightgrey;
+  border-bottom: 1px solid #656464;
+  font-size: 1.2em;
 }
-
-.accordion-question:hover {
-  cursor: pointer;
+.accordion-answer{
+  width: 100%;
+  padding: 0 15px;
 }
-
 
 @media (max-width: 500px){
   .ask {
