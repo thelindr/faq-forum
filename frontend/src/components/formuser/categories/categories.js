@@ -35,7 +35,9 @@ export default class Categories extends React.Component {
       statusMessage: status
     })
     setTimeout(() => {
-      this.setState({ statusMessage: "" })
+      this.setState({
+        statusMessage: ""
+      })
     }, 2000)
   }
 

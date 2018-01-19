@@ -13,7 +13,8 @@ class Formadmin extends React.Component {
       lastname: "",
       answer: "",
       questionId: "",
-      isHidden: true
+      isHidden: true,
+      message: ""
     }
   }
 
@@ -56,6 +57,12 @@ class Formadmin extends React.Component {
     }
   }
 
+  getMessagereply = () => {
+    if (this.state.message) {
+      return <p>{this.state.message}</p>
+    }
+  }
+
   handleSubmit = event => {
     event.preventDefault()
     console.log(this.state)
@@ -75,7 +82,16 @@ class Formadmin extends React.Component {
             "Content-Type": "application/json"
           },
           body: JSON.stringify({ answered: true })
+        }).then(() => {
+          this.setState({
+            firstname: "",
+            lastname: "",
+            answer: "",
+            message: "question answered!"
+          })
         })
+      } else {
+        this.setState({ message: "all fields required" })
       }
     })
   }
@@ -129,6 +145,9 @@ class Formadmin extends React.Component {
                 <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="first name" />
                 <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="last name" />
                 <textarea id="admintextarea" type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="answer" />
+                <div id="message">
+                  {this.getMessagereply()}
+                </div>
                 <button id="buttonstyle">reply</button>
               </form>
 
