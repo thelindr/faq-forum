@@ -23,15 +23,13 @@ export default class Faqitem extends React.Component {
     )
 
     return (
-      <div>
-        <div
-          className="accordion-question"
-          onClick={this.handleClick}
-          role="presentation"
-          onKeyDown={this.handleClick}>
+      <div className="accordion-container">
+        <div className="accordion-question" onClick={this.handleClick} role="presentation" onKeyDown={this.handleClick}>
           <h2>{this.props.question}</h2>
         </div>
-        {!this.state.isHidden && <Answer />}
+        <div className="accordion-answer">
+          {!this.state.isHidden && <Answer />}
+        </div>
       </div>
 
     )
