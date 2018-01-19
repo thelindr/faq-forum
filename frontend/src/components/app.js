@@ -41,10 +41,9 @@ class App extends React.Component {
             } /> */}
           <Route
             path="/"
-            exact
             component={Categories} />
           <Route
-            path="/:category"
+            path="/category/:category"
             render={routeProps =>
               <Faqlist
                 {...routeProps}

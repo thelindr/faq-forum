@@ -8,7 +8,7 @@ class CategoryButton extends React.Component {
   render() {
     return (
       <div className="oneCategory">
-        <Link className="link" to={`/${this.props.item}`}>
+        <Link className="link" to={`/category/${this.props.item}`}>
           {/* <button> */}
           <button className="buttoncat" value={this.props.item}>
             <p className="category-navigation">
