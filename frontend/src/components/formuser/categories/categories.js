@@ -37,7 +37,7 @@ export default class Categories extends React.Component {
     })
     setTimeout(() => {
       this.setState({ statusMessage: "" })
-    }, 5000)
+    }, 2000)
   }
 
   // askQuesetionbuttontext
