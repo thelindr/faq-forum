@@ -120,6 +120,15 @@ img
   padding: 0 10%;
 }
 
+ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.Faq-list{
+  margin-bottom: 50px;
+}
+
 @media (max-width: 500px){
   .ask {
     width: 80%;
