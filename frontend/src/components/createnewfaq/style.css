@@ -6,9 +6,12 @@
   justify-content: space-around;
   border: 1px solid white;
   border-radius: 10px;
-  background: red;
   margin: 0;
 }
+
+/*.outerfaq {
+  width: 30%;
+}*/
 
 #inputcreate {
   width: 95%;
