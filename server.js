@@ -145,15 +145,9 @@ app.get("/newfaq", (req, res) => {
 
 app.put("/questions/:id", (req, res) => {
   const condition = { _id: req.params.id }
-  Question.update(condition, req.body )
+  Question.update(condition, req.body)
     .then(() => { res.status(201).send("FAQ item updated in MongoDB") })
     .catch(err => { res.status(400).send(err) })
-})
-
-app.get("/questions/:id", (req, res) => {
-  Question.find().then((Question) => {
-    res.json(Question)
-  })
 })
 
 //
