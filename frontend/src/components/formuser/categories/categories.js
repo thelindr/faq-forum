@@ -9,8 +9,7 @@ const categories = [
   "pocket operator",
   "OD-11",
   "checkout and shipping",
-  "other",
-  "statusMessage"
+  "other"
 ]
 
 export default class Categories extends React.Component {
