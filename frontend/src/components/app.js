@@ -39,12 +39,10 @@ class App extends React.Component {
                 questions={this.state.questionAPI} />
             } /> */}
           <Route
-            exact
             path="/"
             component={Categories} />
           <Route
-            exact
-            path="/categories"
+            path="/category/:category"
             render={routeProps =>
               <Faqlist
                 {...routeProps}

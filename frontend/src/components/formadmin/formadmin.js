@@ -66,6 +66,17 @@ class Formadmin extends React.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(this.state)
+    }).then(response => {
+      if (response.ok) {
+        fetch(`http://localhost:8080/questions/${this.state.questionId}`, {
+          method: "PUT",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ answered: true })
+        })
+      }
     })
   }
 

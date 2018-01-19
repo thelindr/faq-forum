@@ -21,7 +21,7 @@ export default class Faqlist extends React.Component {
   }
 
   render() {
-    const selectedCategory = this.props.categories
+    const selectedCategory = this.props.match.params.category
     const filteredByCategory = this.state.faq.filter((item => item.category === selectedCategory))
     console.log("selected:", selectedCategory)
     // const selectedCategory = this.props.match.params.category

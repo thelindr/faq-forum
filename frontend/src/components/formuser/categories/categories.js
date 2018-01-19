@@ -70,7 +70,6 @@ export default class Categories extends React.Component {
                 onAsk={this.toggleHiddenbox}
                 onStatus={this.getQuestionStatus} />}
           </div>
-          <Faqlist />
         </div>
         <div className="statussent">
           <h1 id="green">{this.state.statusMessage}</h1>
