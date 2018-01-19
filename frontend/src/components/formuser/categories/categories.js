@@ -31,11 +31,14 @@ export default class Categories extends React.Component {
     })
   }
 
-  getQuestionStatus = status => (
+  getQuestionStatus = status => {
     this.setState({
       statusMessage: status
     })
-  )
+    setTimeout(() => {
+      this.setState({ statusMessage: "" })
+    }, 5000)
+  }
 
   // askQuesetionbuttontext
 
