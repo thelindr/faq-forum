@@ -80,6 +80,14 @@
   text-align: center;
 }
 
+.statussent {
+  text-align: center;
+}
+
+#green {
+  color: #00cc66;
+}
+
 img
  {
    min-width: 200px;

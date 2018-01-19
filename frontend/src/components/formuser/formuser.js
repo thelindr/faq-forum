@@ -72,13 +72,15 @@ class Formuser extends React.Component {
             title: "",
             question: "",
             category: "",
-            message: "question sent!"
+            message: ""
           }, () => { console.log("State has been reset", response, response.status) })
         }
+        this.props.onStatus("question sent!")
       })
     } else {
       this.setState({ message: "all fields required" })
     }
+    this.getMessage()
   }
 
   validateFields = () => {
