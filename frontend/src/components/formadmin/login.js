@@ -37,7 +37,7 @@ handleSubmit = event => {
       body: JSON.stringify(this.state)
     }).then(response => {
       if (response.ok) {
-        this.props.history.push("/formadmin")
+        this.props.history.push("/admin/formadmin")
         this.props.onLogin()
       } else {
         this.setState({ message: "unknown user" })

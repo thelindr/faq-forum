@@ -54,7 +54,7 @@ class App extends React.Component {
             } />
           <Route
             exact
-            path="/formadmin"
+            path="/admin/formadmin"
             render={routeProps =>
               <Formadmin
                 {...routeProps}
