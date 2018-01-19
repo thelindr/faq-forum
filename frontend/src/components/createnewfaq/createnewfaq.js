@@ -111,7 +111,7 @@ class Createnewfaq extends React.Component {
             </option>
           </select>
           <div className="message">
-            {this.getMessage()}
+            <p>{this.getMessage()}</p>
           </div>
           <button id="buttocreatenew" type="submit">post</button>
         </form>

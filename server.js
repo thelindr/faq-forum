@@ -150,6 +150,12 @@ app.put("/questions/:id", (req, res) => {
     .catch(err => { res.status(400).send(err) })
 })
 
+app.get("/questions/:id", (req, res) => {
+  Question.find().then((Question) => {
+    res.json(Question)
+  })
+})
+
 //
 // // Uppdatera t.ex. svaret på en specifik fråga i databasen
 // app.put("/faqitems/:id", (req, res) => { // Frontend gör post-request med id på den fråga som ska uppdateras

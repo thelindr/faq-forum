@@ -163,6 +163,10 @@
     margin-bottom: 0;
   }
 
+  .buttoncreatenew {
+    width: 100%;
+  }
+
   #newfaqtoggle {
     width: 100%;
     margin-top: 20px;
@@ -179,8 +183,27 @@
 
 }
 
-@media (min-width:501px) and (max-width:800px){
+@media (min-width:501px) and (max-width:900px){
 
+  .Formadmin{
+    padding: 20px 60px;
+  }
+
+  .unanswered {
+    margin-top: 20px;
+    border: 1px solid white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .admincontroller {
+    width: 100%;
+    padding: 15px;
+  }
+  .buttoncreatenew {
+    width: 100%;
+  }
 
 }
 
