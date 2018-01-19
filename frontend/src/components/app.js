@@ -39,7 +39,11 @@ class App extends React.Component {
                 questions={this.state.questionAPI} />
             } /> */}
           <Route
+            exact
             path="/"
+            component={Categories} />
+          <Route
+            path="/category"
             component={Categories} />
           <Route
             path="/category/:category"
