@@ -22,7 +22,7 @@ export default class Nav extends React.Component {
     if (this.state.isHidden) {
       return "admin"
     } else {
-      return "X"
+      return "exit"
     }
   }
 

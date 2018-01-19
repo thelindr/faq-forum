@@ -92,7 +92,7 @@ render() {
           <div className="message">
             {this.getMessage()}
           </div>
-          <button id="buttonuser">✓</button>
+          <button id="buttonuser">log in</button>
         </form>
       </div>
     </div>

@@ -10,7 +10,8 @@ const categories = [
   "pocket operator",
   "OD-11",
   "checkout and shipping",
-  "other"
+  "other",
+  "statusMessage"
 ]
 
 export default class Categories extends React.Component {
@@ -25,7 +26,16 @@ export default class Categories extends React.Component {
     this.setState({
       isHidden: !this.state.isHidden
     })
+    this.setState({
+      statusMessage: ""
+    })
   }
+
+  getQuestionStatus = status => (
+    this.setState({
+      statusMessage: status
+    })
+  )
 
   // askQuesetionbuttontext
 
@@ -55,9 +65,14 @@ export default class Categories extends React.Component {
         <div className="questionbutton">
           <button className="buttoncat" onClick={this.toggleHiddenbox}>{this.askQuesetionbuttontext()} </button>
           <div id="newfaqtoggle">
-            {!this.state.isHidden && <Formuser onAsk={this.toggleHiddenbox} />}
+            {!this.state.isHidden &&
+              <Formuser
+                onAsk={this.toggleHiddenbox}
+                onStatus={this.getQuestionStatus} />}
           </div>
-          <Faqlist />
+        </div>
+        <div className="statussent">
+          <h1 id="green">{this.state.statusMessage}</h1>
         </div>
       </div>
     )

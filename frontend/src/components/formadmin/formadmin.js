@@ -66,6 +66,17 @@ class Formadmin extends React.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(this.state)
+    }).then(response => {
+      if (response.ok) {
+        fetch(`http://localhost:8080/questions/${this.state.questionId}`, {
+          method: "PUT",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ answered: true })
+        })
+      }
     })
   }
 
@@ -108,14 +119,16 @@ class Formadmin extends React.Component {
           <div className="admincontroller">
             <div className="answer">
               <p id="colorwhite">question</p>
+              <input type="text" placeholder="category" value={selectedQuestion && selectedQuestion.category} />
+              <input type="text" placeholder="name" value={selectedQuestion && selectedQuestion.firstname + " " + selectedQuestion.lastname} />
               <input type="text" placeholder="title" value={selectedQuestion && selectedQuestion.title} />
               <textarea id="admintextarea" placeholder="question" type="text" value={selectedQuestion && selectedQuestion.question} />
 
               <p id="colorwhite">answer</p>
               <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="First name" />
-                <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="Last name" />
-                <textarea id="admintextarea" type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="Enter you answer" />
+                <input type="text" value={this.state.firstname} onChange={this.handleFirstname} placeholder="first name" />
+                <input type="text" value={this.state.lastname} onChange={this.handleLastname} placeholder="last name" />
+                <textarea id="admintextarea" type="text" value={this.state.answer} onChange={this.handleAnswer} placeholder="answer" />
                 <button id="buttonstyle">reply</button>
               </form>
 

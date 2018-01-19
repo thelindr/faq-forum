@@ -143,6 +143,23 @@ app.get("/newfaq", (req, res) => {
   })
 })
 
+app.put("/questions/:id", (req, res) => {
+  const condition = { _id: req.params.id }
+  Question.update(condition, req.body )
+    .then(() => { res.status(201).send("FAQ item updated in MongoDB") })
+    .catch(err => { res.status(400).send(err) })
+})
+
+//
+// // Uppdatera t.ex. svaret på en specifik fråga i databasen
+// app.put("/faqitems/:id", (req, res) => { // Frontend gör post-request med id på den fråga som ska uppdateras
+//   const condition = { _id: req.params.id } // Villkor för item:et som ska uppdateras
+//   FaqItem.update(condition, req.body) // Uppdatera databasen med objekt som finns i requestens body
+//     .then(() => { res.status(201).send("FAQ item updated in Mongodb") }) // Promise: Skicka 201 till frontend när databasen är uppdaterad
+//     .catch(err => { res.status(400).send(err) }) // Promise: Skicka status 400 +
+//     // felmeddelande om det inte gick att uppdatera
+// })
+
 // app.post("/login", (req, res) => {
 //   const login = new Login(req.body)
 //
