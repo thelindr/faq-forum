@@ -101,7 +101,7 @@ class Formadmin extends React.Component {
         <div className="adminpage">
 
           <div className="unanswered">
-            <p id="colorwhite">unanswered questions: {this.props.questions.length}</p>
+            <p id="colorwhite">unanswered questions: {notAnsweredQuestions.length}</p>
             <div className="questions">
               {notAnsweredQuestions.map(item => (
                 <QListItem
